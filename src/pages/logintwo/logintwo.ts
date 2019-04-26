@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MyApp } from '../../app/app.component';
 import { Storage } from '@ionic/storage';
 import { TabsclientPage } from '../tabsclient/tabsclient';
+import { TabsfreelancerPage } from '../tabsfreelancer/tabsfreelancer';
 
 
 @Component({
@@ -23,7 +24,7 @@ export class LogintwoPage {
   signIn(){
     this.storage.set("type","recruiter");
     // this.events.publish("type", "recruiter");
-    this.navCtrl.setRoot(TabsclientPage);
+    this.navCtrl.setRoot(TabsfreelancerPage);
   }
 
 }

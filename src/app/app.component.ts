@@ -47,25 +47,25 @@ export class MyApp {
     //   else{
     //     if(res == "recruiter"){
 
-           this.pages = [
-            { title: 'Home', icon : 'ios-home', component: TabsclientPage, pageName: 'GotopremiumPage', index: 1 },
-            { title: 'Profile', icon : 'ios-person', component: ProfileclientPage, pageName: 'GotopremiumPage', index: 0 },        
-            { title: 'Settings', icon : 'ios-settings', component: TabsclientPage, pageName: 'GotopremiumPage', index: 1 },
-            { title: 'Post Job!', icon : 'ios-alert',  component: PostjobPage, pageName: 'GotopremiumPage', index: 2 },
-            { title: 'Logout', icon : 'ios-log-out',   component: LoginPage, pageName: 'GotopremiumPage', index: 6 },
-          ];  
+          //  this.pages = [
+          //   { title: 'Home', icon : 'ios-home', component: TabsclientPage, pageName: 'GotopremiumPage', index: 1 },
+          //   { title: 'Profile', icon : 'ios-person', component: ProfileclientPage, pageName: 'GotopremiumPage', index: 0 },        
+          //   { title: 'Settings', icon : 'ios-settings', component: TabsclientPage, pageName: 'GotopremiumPage', index: 1 },
+          //   { title: 'Post Job!', icon : 'ios-alert',  component: PostjobPage, pageName: 'GotopremiumPage', index: 2 },
+          //   { title: 'Logout', icon : 'ios-log-out',   component: LogintwoPage, pageName: 'GotopremiumPage', index: 6 },
+          // ];  
 
     //       this.rootPage = TabsclientPage;
           
     //     }else if(res == "freelancer"){
           
-    //       this.pages = [
-    //         { title: 'Search Jobs', icon : 'ios-search', component: TabsfreelancerPage, pageName: 'GotopremiumPage', index: 0 },        
-    //         { title: 'Job Posts', icon : 'ios-pricetags', component: JoblistPage, pageName: 'GotopremiumPage', index: 1 },
-    //         { title: 'Invite', icon : 'ios-alert',  component: TabsfreelancerPage, pageName: 'GotopremiumPage', index: 2 },
-    //         { title: 'Logout', icon : 'ios-log-out',   component: LoginPage, pageName: 'GotopremiumPage', index: 6 },
+          this.pages = [
+            { title: 'Home', icon : 'ios-home', component: TabsfreelancerPage, pageName: 'GotopremiumPage', index: 0 },        
+            { title: 'Job Posts', icon : 'ios-briefcase', component: JoblistPage, pageName: 'GotopremiumPage', index: 1 },
+            { title: 'Invite', icon : 'ios-alert',  component: TabsfreelancerPage, pageName: 'GotopremiumPage', index: 2 },
+            { title: 'Logout', icon : 'ios-log-out',   component: LogintwoPage, pageName: 'GotopremiumPage', index: 6 },
       
-    //       ];   
+          ];   
 
     //       // this.rootPage = TabsfreelancerPage;
     //       this.rootPage = LogintwoPage;

@@ -72,7 +72,7 @@ var JobtagsPage = /** @class */ (function () {
     };
     JobtagsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-jobtags',template:/*ion-inline-start:"/Users/macpro/Desktop/Tech-Tinder/src/pages/jobtags/jobtags.html"*/'<!--\n  Generated template for the JobtagsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>jobtags</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/macpro/Desktop/Tech-Tinder/src/pages/jobtags/jobtags.html"*/,
+            selector: 'page-jobtags',template:/*ion-inline-start:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/jobtags/jobtags.html"*/'<!--\n  Generated template for the JobtagsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>jobtags</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/jobtags/jobtags.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], JobtagsPage);
