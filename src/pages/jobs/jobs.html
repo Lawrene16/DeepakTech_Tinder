@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-navbar color="testone">
+      <ion-buttons start>
+        <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      </ion-buttons>
+  
+      <ion-buttons end>
+        <button ion-button icon-only (click)="openSecondModal()">
+            <ion-icon  class="icon ion-home custom-icon" name="notifications"></ion-icon>
+        </button>
+    </ion-buttons>
+      <ion-title>Search Jobs</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content class="maincontent">
+  
+    <ion-fab bottom right >
+      <button color="testone" ion-fab mini>
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+    </ion-fab>
+  
+    <ion-fab bottom right style="margin-right: 45px">
+      <button color="testone" ion-fab mini>
+        <ion-icon name="md-remove"></ion-icon>
+      </button>
+    </ion-fab>
+    <ion-searchbar class="searchitem"
+     animated="true" 
+    placeholder="Search for clients close to you"></ion-searchbar>
+  
+    <div  #map id="map">
+    </div>
+
+    <p align="center" id="intitalstring">
+        <b>Edung Divinefavour</b><br>
+        Hourly rate - $12.5/hr
+        <br>
+        <br>
+        <button onclick="Window.myComponent.viewProfile()" class="contactbtn">View Profile</button>
+      </p>
+  </ion-content>
+  

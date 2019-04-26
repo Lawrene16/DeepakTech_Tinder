@@ -1,1 +1,1 @@
-# DeepakTech_Tinder
+# Tech-Tinder
