@@ -29,11 +29,14 @@ import { ProfileclientPage } from '../pages/profileclient/profileclient';
 import { AutoCompleteModule } from 'ionic2-auto-complete';
 import { FormsModule }    from '@angular/forms';
 import { CompletetestProvider } from '../providers/completetest/completetest';
-import { Dialogs } from '@ionic-native/dialogs';
 import { JoblistPage } from '../pages/joblist/joblist';
 import { ChatService } from '../providers/chat-service';
 import { DetailsfreelancerPage } from '../pages/detailsfreelancer/detailsfreelancer';
 import { AuthProvider } from '../providers/auth/auth';
+import { RegisterPage } from '../pages/register/register';
+import { CountriesapiProvider } from '../providers/countriesapi/countriesapi';
+import { SetupprofilePage } from '../pages/setupprofile/setupprofile';
+import { Http } from '@angular/http';
 
 
 
@@ -59,12 +62,14 @@ firebase.initializeApp(firebaseconfig);
     ChatdetailsPage,
     LoginPage,
     // Chat,
+    RegisterPage,
     JoblistPage,
     JobsPage,
     ShortlistedPage,
     DetailsfreelancerPage,    
     TabsclientPage,
     ProfilefreelancerPage,
+    SetupprofilePage,
     ProfileclientPage,
     FreelancersPage,
     TabsfreelancerPage,
@@ -93,7 +98,9 @@ firebase.initializeApp(firebaseconfig);
     ShortlistedPage,
     FreelancersPage,
     ProfilefreelancerPage,
+    RegisterPage,
     ProfileclientPage,
+    SetupprofilePage,
     JobsPage,
     JoblistPage,
     DetailsfreelancerPage,
@@ -110,11 +117,14 @@ firebase.initializeApp(firebaseconfig);
     SplashScreen,
     HttpClient,
     AngularFireAuth,
+    // Http,
+    CountriesapiProvider,
     ChatService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     EmojiProvider,
     CompletetestProvider,
-    AuthProvider
+    AuthProvider,
+    CountriesapiProvider
   ]
 })
 export class AppModule {}

@@ -8,6 +8,7 @@ import { TabsclientPage } from '../tabsclient/tabsclient';
 import { TabsfreelancerPage } from '../tabsfreelancer/tabsfreelancer';
 // import * as firebase from 'firebase';
 import { AuthProvider } from '../../providers/auth/auth'
+import { RegisterPage } from '../register/register';
 
 @Component({
   selector: 'page-login',
@@ -83,6 +84,10 @@ export class LoginPage {
     });
   
     toast.present();
+  }
+
+  signUp(){
+    this.navCtrl.push(RegisterPage);
   }
 
 

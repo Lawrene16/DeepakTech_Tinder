@@ -1,0 +1,78 @@
+
+
+<ion-content class="content_bg" padding>
+
+<p align="center">
+  <img src="../../assets/icon.png" height="110">
+  <!-- <b style="font-size: 35px; color: white">ech-Tinder</b> -->
+</p>
+
+  <ion-list class="listt">  
+    
+      <ion-item class="listt">
+          <ion-label floating>Full Name</ion-label>
+          <ion-input [(ngModel)]="fullname"></ion-input>
+        </ion-item>
+
+      <ion-item class="listt">
+        <ion-label floating>E-mail or Phone</ion-label>
+        <ion-input type="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+  
+      <ion-item class="listt">
+          <ion-label floating>Password</ion-label>
+          <ion-input type="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <h5 style="text-align: center; opacity: 0.7">I want to be a </h5>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+            <ion-card
+            [ngStyle]="{'background-color': cardbackgroundr}"
+            (click)="isRecruiter()"
+             class="choosecard">
+             <h2 
+            [ngStyle]="{'color': cardtextr}"             
+             style="opacity: 0.8">Recruiter
+            </h2></ion-card>
+        </ion-col>
+        <ion-col>
+            <ion-card 
+            [ngStyle]="{'background-color': cardbackgroundf}"            
+            (click)="isFreelancer()" class="choosecard">
+            <h2
+            [ngStyle]="{'color': cardtextf}"             
+             style="opacity: 0.8">Freelancer</h2>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    
+
+    <button ion-button (click)="signUp()" block class="btn success">JOIN NOW</button>
+
+    <!-- <p align="center"><b >Or</b></p> -->
+    <button ion-button 
+    (click)="linkedinsignup()"
+    block style="border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 30px;
+    width: 75vw;" 
+    color="testone">
+    <ion-icon style="font-size: 30px;
+     position: absolute; left: 20px;" name="logo-linkedin"></ion-icon>                    
+     Join now with LinkedIn!
+</button>
+
+    <br>
+    <br>
+    
+    <div>
+      <!-- <b class="forgotp">F?</b> -->
+      <b class="joinn" (click)="alreadyaMember()">ALREADY A MEMBER?</b>
+    </div>
+
+</ion-content>

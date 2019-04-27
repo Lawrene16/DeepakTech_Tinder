@@ -13,7 +13,10 @@ import * as firebase from 'firebase/app';
 @Injectable()
 export class AuthProvider {
 
+  
   private user: firebase.User;
+
+  firedata = firebase.database();
 
   constructor(public afAuth: AngularFireAuth) {
     afAuth.authState.subscribe(user => {
@@ -24,5 +27,16 @@ export class AuthProvider {
   signInWithEmail(newEmail: string, newPassword: string): Promise<any>{
     return this.afAuth.auth.signInWithEmailAndPassword(newEmail, newPassword);
   }
+
+  signUpWithEmail(email, password, fullname, userType): Promise<any>{
+    return this.afAuth.auth.createUserWithEmailAndPassword(email, password).then(() =>{
+        this.firedata.ref('/users').child(this.afAuth.auth.currentUser.uid).set({
+            fullname: fullname,
+            userType: userType
+        });
+    });
+  }
+
+
 
 }

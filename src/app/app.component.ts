@@ -16,6 +16,8 @@ import { JoblistPage } from '../pages/joblist/joblist';
 import { ProfilefreelancerPage } from '../pages/profilefreelancer/profilefreelancer';
 import { Storage } from '@ionic/storage';
 import { DetailsfreelancerPage } from '../pages/detailsfreelancer/detailsfreelancer';
+import { SetupprofilePage } from '../pages/setupprofile/setupprofile';
+import { RegisterPage } from '../pages/register/register';
 
 
 @Component({
@@ -35,7 +37,7 @@ export class MyApp {
     public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
-    this.rootPage = LoginPage;
+    this.rootPage = RegisterPage;
     // this.storage.get("type").then((res) =>{
     //   console.log(res);
     //   if(res == null){
