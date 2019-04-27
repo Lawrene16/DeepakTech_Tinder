@@ -8,6 +8,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ChatsPage } from '../pages/chats/chats';
 import { HttpClientModule } from '@angular/common/http';
 // import { Chat } from '../pages/chat/chat';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuth } from 'angularfire2/auth';
+import * as firebase from 'firebase';
+
 import { IonicStorageModule } from '@ionic/storage';
 import { EmojiProvider } from '../providers/emoji';
 import { ChatdetailsPage } from '../pages/chatdetails/chatdetails';
@@ -29,7 +33,24 @@ import { Dialogs } from '@ionic-native/dialogs';
 import { JoblistPage } from '../pages/joblist/joblist';
 import { ChatService } from '../providers/chat-service';
 import { DetailsfreelancerPage } from '../pages/detailsfreelancer/detailsfreelancer';
-import { LogintwoPage } from '../pages/logintwo/logintwo';
+import { AuthProvider } from '../providers/auth/auth';
+
+
+
+var firebaseconfig = {
+  apiKey: "AIzaSyAKq8NqNzRd7Z_GMe2XVK95Km8HTHOlYYs",
+    authDomain: "tech-tinder.firebaseapp.com",
+    databaseURL: "https://tech-tinder.firebaseio.com",
+    projectId: "tech-tinder",
+    storageBucket: "tech-tinder.appspot.com",
+    messagingSenderId: "857697500539"
+};
+
+
+
+
+firebase.initializeApp(firebaseconfig);
+
 
 @NgModule({
   declarations: [
@@ -44,7 +65,6 @@ import { LogintwoPage } from '../pages/logintwo/logintwo';
     DetailsfreelancerPage,    
     TabsclientPage,
     ProfilefreelancerPage,
-    LogintwoPage,
     ProfileclientPage,
     FreelancersPage,
     TabsfreelancerPage,
@@ -58,6 +78,7 @@ import { LogintwoPage } from '../pages/logintwo/logintwo';
     IonicStorageModule.forRoot(),
    // DragulaModule.forRoot(),
     AutoCompleteModule,
+    AngularFireModule.initializeApp(firebaseconfig),
     FormsModule,
     IonicModule.forRoot(MyApp,{
       tabsHideOnSubPages:true,
@@ -75,7 +96,6 @@ import { LogintwoPage } from '../pages/logintwo/logintwo';
     ProfileclientPage,
     JobsPage,
     JoblistPage,
-    LogintwoPage,    
     DetailsfreelancerPage,
     PostjobPage,    
     LoginPage,
@@ -89,10 +109,12 @@ import { LogintwoPage } from '../pages/logintwo/logintwo';
     StatusBar,
     SplashScreen,
     HttpClient,
+    AngularFireAuth,
     ChatService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     EmojiProvider,
-    CompletetestProvider
+    CompletetestProvider,
+    AuthProvider
   ]
 })
 export class AppModule {}

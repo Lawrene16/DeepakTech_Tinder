@@ -1,113 +1,56 @@
 page-login {
+
     .content_bg{
         // background-image: url('../../assets/back3.jpeg');
         // background-image: url('../../assets/back5.png');        
         // background-image: url('../../assets/download.jpeg');
-        background-image: url('../../assets/happy2.png');
+        // background-image: url('../../assets/happy2.png');
         
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100%;
-        // object-fit: contain;
-        // object-fit: cover;
+        // background-repeat: no-repeat;
+        // background-size: cover;
+        // width: 100%;
+        // // object-fit: contain;
+        // // object-fit: cover;
         
-        background-position: -170px;
+        // background-position: -170px;
 
-        // background-color: color($colors, testone);
-        
-    }
-
-    .logincard{
-        position: absolute;
-        z-index: 5;
-        bottom: 13px;
-        height: 60vh;
-        opacity: 0.9;
-        width: 90vw;
         background-color: white;
-        margin: auto;
-        border-bottom-right-radius: 50px;
-        border-top-left-radius: 50px;
-        border-top-right-radius: 50px;
+        
     }
 
-    .custom-icon {
-        // font-size: 64px;
-        color : white;
-      }
-
-      .notyetclass{
-        border-radius: 5px;
-        margin-left: 30px;
-        width: 75vw;
-        border: 1px solid color($colors, testone);
+    .listt{
+        background: transparent;
         color: color($colors, testone);
-        background-color: white;
         
-      }
+    }
 
-      .sometext{
-        color: color($colors, secondary);
-      }
-    
-      .itemclass{
-        height: 6vh;
-        align-content: center;
+    .btn {
+          color: color($colors, testone);
+        border: 2px solid color($colors, testone);
+        background-color: transparent;
+        color: color($colors, testone);
+        padding: 20px 28px;
+        font-size: 16px;
+        margin-right: 40px;
+        margin-top: 20px;
         margin-left: 30px;
-        outline-color: black;
         width: 75vw;
-        margin-right: 10px;       
-        opacity: 0.4; 
-        // background:color($colors, grey);
-        // background: rgba(158, 158, 158, 0.6);
-        padding-left: 10px;
-        margin-bottom: 12px;
-        border-radius: 30px;  
-        // border: 1px solid #000;
-        outline-style: auto;
-        outline-color: #c3c3c3;
-    }
+        cursor: pointer;
+      }
 
-    // .itemclass{
-    //     height: 6vh;
-    //     align-content: center;
-    //     // margin-left: 0px;
-    //     outline-color: black;
-    //     opacity: 1; 
-    //     width: 75vw;
-    //     // margin-right: 10px;       
-    //     // background:color($colors, grey);
-    //     // background: rgba(158, 158, 158, 0.6);
-    //     // padding-left: 10px;
-    //     margin-bottom: 12px;
-    //     border-radius: 30px;  
-    //     // border: 1px solid #000;
-    //     outline-style: auto;
-    //     outline-color: #c3c3c3;
-    // }
-
-
-    
-    .testclass{
-        padding-right: 30px;
-    }
-
-    .knowrow{
-        justify-content: center; 
-        margin-top: 10px; 
-        margin-bottom: 10px; 
+      .forgotp{
+          color: color($colors, testone);
+          margin-left: 15px;
+        // position: absolute;
+        // z-index: 5;
         
-        font-size: 18px;
-        color: color($colors, grey);
-    }
+        // left: 50px;
+      }
 
-    ion-input {
-        &.custom-input {
-          font-size: 20px; //sets text font size
-          ::placeholder {
-            font-size: 18px; 
-            color: black;//sets placeholder font size
-          }
-        }
+      .joinn{
+            float: right;
+            margin-right: 15px;
+            color: color($colors, testone);
+            
       }
 }
