@@ -17,8 +17,8 @@ import { RegisterPage } from '../register/register';
 export class LoginPage {
 
   // firebase: firebase;
-  email: string;
-  password: string;
+  email: string = "c@gmail.com";
+  password: string = "aaaaaaaa";
 
   constructor(public navCtrl: NavController,
     public loadingCtrl: LoadingController,
@@ -46,7 +46,7 @@ export class LoginPage {
       load.present();
   
       this.auth.signInWithEmail(this.email, this.password).then(() =>{
-        this.navCtrl.setRoot(TabsclientPage);
+        this.navCtrl.setRoot(TabsfreelancerPage);
         load.dismiss();
       }).catch((err) =>{
         console.log(err);

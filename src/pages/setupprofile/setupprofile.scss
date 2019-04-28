@@ -5,7 +5,7 @@ page-setupprofile {
         // background-color: color($colors, testone);
         // background-color: #0e0d0d;        
         
-        height: 27vh;
+        height: 20vh;
     }
     
     .user-photo {
@@ -16,6 +16,10 @@ page-setupprofile {
         margin-top: 70px;
         overflow: hidden;
         border-radius: 50%;
+      }
+
+      .bsuccess{
+
       }
 
       .btn {

@@ -11,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase';
-
+import { LinkedIn } from '@ionic-native/linkedin/ngx';
 import { IonicStorageModule } from '@ionic/storage';
 import { EmojiProvider } from '../providers/emoji';
 import { ChatdetailsPage } from '../pages/chatdetails/chatdetails';
@@ -37,7 +37,7 @@ import { RegisterPage } from '../pages/register/register';
 import { CountriesapiProvider } from '../providers/countriesapi/countriesapi';
 import { SetupprofilePage } from '../pages/setupprofile/setupprofile';
 import { Http } from '@angular/http';
-
+import { Geolocation } from '@ionic-native/geolocation/ngx'
 
 
 var firebaseconfig = {
@@ -117,6 +117,8 @@ firebase.initializeApp(firebaseconfig);
     SplashScreen,
     HttpClient,
     AngularFireAuth,
+    LinkedIn,
+    Geolocation,
     // Http,
     CountriesapiProvider,
     ChatService,

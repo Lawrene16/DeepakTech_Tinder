@@ -4,7 +4,7 @@ import { IonicPage, NavController, ToastController,
 import { TabsfreelancerPage } from '../tabsfreelancer/tabsfreelancer';
 import { AuthProvider } from '../../providers/auth/auth'
 import { SetupprofilePage } from '../setupprofile/setupprofile';
-
+import { LinkedIn, LinkedInLoginScopes } from '@ionic-native/linkedin/ngx';
 /**
  * Generated class for the RegisterPage page.
  *
@@ -25,11 +25,13 @@ export class RegisterPage {
   cardbackgroundr = "#ffffff";
   cardbackgroundf = "#ffffff";
   cardtextf = "#000000";
-  cardtextr = "#000000"
-
+  cardtextr = "#000000";
+  scopes: LinkedInLoginScopes[] = ['r_basicprofile', 'r_emailaddress', 'rw_company_admin', 'w_share'];
+  linkedinUrl = "https://www.linkedin.com/uas/login?session_redirect=%2Foauth%2Fv2%2Flogin-success%3Fapp_id%3D9645523%26auth_type%3DAC%26flow%3D%257B%2522authorizationType%2522%253A%2522OAUTH2_AUTHORIZATION_CODE%2522%252C%2522redirectUri%2522%253A%2522https%253A%252F%252Ftech-tinder.com%252Fauth%252Flinkedin%2522%252C%2522codeChallenge%2522%253Anull%252C%2522codeChallengeMethod%2522%253Anull%252C%2522externalBindingKey%2522%253Anull%252C%2522loginHint%2522%253Anull%252C%2522currentStage%2522%253A%2522LOGIN_SUCCESS%2522%252C%2522currentSubStage%2522%253A0%252C%2522flowHint%2522%253Anull%252C%2522authFlowName%2522%253A%2522generic-permission-list%2522%252C%2522appId%2522%253A9645523%252C%2522creationTime%2522%253A1556410651277%252C%2522state%2522%253A%2522987654321%2522%252C%2522scope%2522%253A%2522r_basicprofile%2522%257D&fromSignIn=1&trk=oauth&cancel_redirect=%2Foauth%2Fv2%2Flogin-cancel%3Fapp_id%3D9645523%26auth_type%3DAC%26flow%3D%257B%2522authorizationType%2522%253A%2522OAUTH2_AUTHORIZATION_CODE%2522%252C%2522redirectUri%2522%253A%2522https%253A%252F%252Ftech-tinder.com%252Fauth%252Flinkedin%2522%252C%2522codeChallenge%2522%253Anull%252C%2522codeChallengeMethod%2522%253Anull%252C%2522externalBindingKey%2522%253Anull%252C%2522loginHint%2522%253Anull%252C%2522currentStage%2522%253A%2522LOGIN_SUCCESS%2522%252C%2522currentSubStage%2522%253A0%252C%2522flowHint%2522%253Anull%252C%2522authFlowName%2522%253A%2522generic-permission-list%2522%252C%2522appId%2522%253A9645523%252C%2522creationTime%2522%253A1556410651277%252C%2522state%2522%253A%2522987654321%2522%252C%2522scope%2522%253A%2522r_basicprofile%2522%257D";
 
 
   constructor(public navCtrl: NavController,
+    public linkedin: LinkedIn,
     public loadingCtrl: LoadingController,
     public auth: AuthProvider,
     public toastCtrl: ToastController,
@@ -41,8 +43,12 @@ export class RegisterPage {
   }
 
   linkedinsignup(){
+    this.linkedin.login(this.scopes, true)
+    .then(() => this.presentToast('Logged In'))
+    .catch(e => console.log('Error logging in', e));
 
-  }
+
+  } 
 
   isRecruiter(){
     this.userType = "recruiter";

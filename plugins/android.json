@@ -1,0 +1,43 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.deepak.techtinder"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.deepak.techtinder"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.deepak.techtinder"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "com.deepak.techtinder"
+    },
+    "cordova-plugin-ionic-webview": {
+      "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+",
+      "PACKAGE_NAME": "com.deepak.techtinder"
+    },
+    "cordova-plugin-linkedin": {
+      "PACKAGE_NAME": "com.deepak.techtinder"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.deepak.techtinder"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.deepak.techtinder"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.deepak.techtinder"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "com.deepak.techtinder"
+    }
+  },
+  "dependent_plugins": {}
+}

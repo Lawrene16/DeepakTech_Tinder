@@ -1,5 +1,6 @@
 import { Component,  ViewChild, ElementRef  } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, ToastController, NavParams } from 'ionic-angular';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 
 declare var google: any;
@@ -16,12 +17,18 @@ export class JobsPage {
 
   map: any;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,
+    public toastCtrl: ToastController,
+    public geolocation: Geolocation) {
     Window["myComponent"] = this;
   }
 
   ionViewDidLoad(){
     this.loadMap();
+
+    this.geolocation.getCurrentPosition().then((res) =>{
+      this.presentToast(res);
+    })
   }
 
   populateMap(map){
@@ -181,5 +188,18 @@ export class JobsPage {
     return defmarker;
   }
 
+  presentToast(message){
+    let toast = this.toastCtrl.create({
+      message: message,
+      duration: 3000,
+      position: 'top'
+    });
+  
+    toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+    });
+  
+    toast.present();
+  }
 
 }
