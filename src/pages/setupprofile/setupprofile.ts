@@ -4,6 +4,9 @@ import { CountriesapiProvider } from '../../providers/countriesapi/countriesapi'
 import { Keyboard } from 'ionic-angular';
 import * as firebase from 'firebase/app';
 import { TabsfreelancerPage } from '../tabsfreelancer/tabsfreelancer';
+import { ModalController } from 'ionic-angular';
+import { ModalPage } from '../modal/modal';
+
 
 /**
  * Generated class for the SetupprofilePage page.
@@ -37,15 +40,25 @@ export class SetupprofilePage {
     public countries: string[] = [];
     skillstobeuploaded = [];
     isshidden = true;
+    fullname;
+    writeup = "";
+    hourlyrate;
+    experienceslist = [];
+    shouldhidetext = false;
+    shouldhidetexttwo = false;
 
 
   constructor(public navCtrl: NavController,
+    public modalCtrl: ModalController,
     private keyboard: Keyboard,
     public loadingCtrl: LoadingController,
     public toastCtrl: ToastController,
     public countriesApi: CountriesapiProvider,
     public alertCtrl: AlertController,
     public navParams: NavParams) {
+
+      this.fullname = this.navParams.get('fullname');
+      this.hourlyrate = '0';
   }
 
   add(item: string, i) {
@@ -83,6 +96,12 @@ export class SetupprofilePage {
     this.keyboard.close();
   }
 
+  ionViewDidLoad(){
+    if(this.writeup.length != 0){
+      this.shouldhidetexttwo = true;
+    }
+  }
+
   search() {
     if (!this.input.trim().length || !this.keyboard.isOpen()) {
       this.countries = [];
@@ -91,6 +110,38 @@ export class SetupprofilePage {
     
     this.countries = this.list.filter(item => item.toUpperCase().includes(this.input.toUpperCase()));
   }
+
+  presentModal() {
+    // const modal = this.modalCtrl.create(ModalPage);
+    // modal.onDidDismiss(data => {
+    //   console.log(data);
+    //   this.writeup == data;
+    //   });
+    // modal.present();
+    // this.navCtrl.push(ModalPage);
+
+     // callback...
+
+
+// push page...
+      // this.navCtrl.push(ModalPage, {
+      // callback: this.myCallbackFunction
+      // });
+
+      // this.navCtrl.push(ModalPage,
+      //   {
+      //       // data: this.data,
+      //       callback: this.getData
+      //   });
+  }
+
+      getData = data =>
+    {
+      return new Promise((resolve, reject) => {
+        resolve();
+        console.log(resolve)
+      });
+    };
 
   presentToast(message){
     let toast = this.toastCtrl.create({
@@ -108,67 +159,109 @@ export class SetupprofilePage {
 
   showBox(index){
     var placeholder;
+    var type;
+    var classtouse;
+
     switch(index){
       case 0:
       placeholder = "Full Name";
+      type = 'text';
       break;
 
       case 1:
       placeholder = "Hourly Rate";
+      type = 'number';
       break;
 
       case 3:
-      placeholder = document.getElementById('writeup').innerHTML;
-    }
+      placeholder = "Hourly Rate";
+      type = 'number';
+          this.presentModal();
+          break;
 
+    }
     var inputs = [
       {
         name: 'clickedsumtn',
-        placeholder: placeholder
+        placeholder: placeholder,
+        type: type
       }
     ];
 
     if(index == 2){
         inputs = [
           {
-          name: 'clickedsumtn',
-          placeholder: 'Role'
+          name: 'role',
+          placeholder: 'Role',
+          type: 'text'
         },
         {
-          name: 'clickedsumtn',
-          placeholder: 'Company'
+          name: 'company',
+          placeholder: 'Company',
+          type: 'text'
         },
       ];
     }
 
 
-    
-
-    
-
-
-
     let alert = this.alertCtrl.create({
       inputs: inputs,
+      cssClass: classtouse,
       buttons: [
         {
           text: 'Cancel',
           role: 'cancel',
           handler: data => {
-            console.log('Cancel clicked');
           }
         },
         {
           text: 'Ok',
           handler: data => {
-            
+            switch(index){
+              case 0:
+                this.fullname = data.clickedsumtn;
+                break;
+
+              case 1:
+                  this.hourlyrate = data.clickedsumtn
+                  break;  
+
+              case 2:
+                  if(data.role != "" && data.role != null && data.company != "" && data.company != null){
+                    this.experienceslist.push({
+                      role: data.role,
+                      company: data.company
+                    });
+                  }else if(data.role == "" || data.role == null){
+                    this.presentToast("Role Field Cannot be left blank");
+                  }else if(data.company == "" || data.company == null){
+                    this.presentToast("Company name cannot be left blank");
+                  }                  
+            }
+
+            if(this.experienceslist.length != 0){
+                this.shouldhidetext = true;
+            }
           }
         }
       ]
     });
-    alert.present();
+    if(index != 3){
+        alert.present();
+    }else if(index == 3){
+        alert.dismiss();
+    }
   }
 
+
+  removeExperience(experience, index){
+    this.experienceslist.splice(index, 1);
+    console.log(this.experienceslist.length);
+
+    if(this.experienceslist.length == 0){
+      this.shouldhidetext = false;
+    }
+  }
 
   saveprofile(){
     let load = this.loadingCtrl.create({
@@ -177,9 +270,10 @@ export class SetupprofilePage {
     load.present();
 
     this.firedata.ref('/users').child(firebase.auth().currentUser.uid).update({
-      hourlyRate: '$12.5/hr',
+      hourlyRate: '$' + this.hourlyrate + '/hr',
       skillstags: this.skillstobeuploaded,
-      aboutMe: document.getElementById('writeup').innerHTML
+      experiences: this.experienceslist,
+      aboutMe: this.writeup
     }).then(() =>{
         this.navCtrl.push(TabsfreelancerPage);
         load.dismiss();

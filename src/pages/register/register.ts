@@ -5,6 +5,7 @@ import { TabsfreelancerPage } from '../tabsfreelancer/tabsfreelancer';
 import { AuthProvider } from '../../providers/auth/auth'
 import { SetupprofilePage } from '../setupprofile/setupprofile';
 import { LinkedIn, LinkedInLoginScopes } from '@ionic-native/linkedin/ngx';
+import { TabsclientPage } from '../tabsclient/tabsclient';
 /**
  * Generated class for the RegisterPage page.
  *
@@ -82,7 +83,13 @@ export class RegisterPage {
       this.auth.signUpWithEmail(
         this.email, this.password, this.fullname, this.userType
         ).then(() =>{
-        this.navCtrl.setRoot(SetupprofilePage);
+          if(this.userType == "freelancer"){
+            this.navCtrl.setRoot(SetupprofilePage, {
+              'fullname':this.fullname
+            });
+          }else if(this.userType == "recruiter"){
+            this.navCtrl.setRoot(TabsclientPage);
+          }
         load.dismiss();
       }).catch((err) =>{
         console.log(err);

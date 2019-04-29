@@ -7,8 +7,8 @@ webpackJsonp([2],{
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsfreelancerPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chats_chats__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__jobs_jobs__ = __webpack_require__(332);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__profilefreelancer_profilefreelancer__ = __webpack_require__(334);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__jobs_jobs__ = __webpack_require__(334);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__profilefreelancer_profilefreelancer__ = __webpack_require__(336);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -46,8 +46,8 @@ var TabsfreelancerPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__chatdetails_chatdetails__ = __webpack_require__(330);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__chatdetails_chatdetails__ = __webpack_require__(332);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -81,7 +81,7 @@ var ChatsPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-chats',template:/*ion-inline-start:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/chats/chats.html"*/'<ion-header>\n  <ion-navbar ion-fixed align-title="center" color="light">\n      <button ion-button left menuToggle>\n            <ion-icon class="icon ion-home custom-icon" name="menu"></ion-icon>\n      </button>\n\n      <ion-buttons end>\n        <button ion-button icon-only         >\n            <ion-icon name="search"></ion-icon>\n        </button>\n    </ion-buttons>\n\n      <ion-title>  \n        Chats\n      </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n<br>\n<br>\n<br>\n\n  <ion-list>\n\n    <ion-fab bottom right >\n      <button color="testone" ion-fab mini>\n        <ion-icon name="md-create"></ion-icon>\n      </button>\n    </ion-fab>\n\n\n    <ion-item (click)="gotoChat(user)">\n      <ion-avatar item-left>\n        <img src="../../assets/one.jpg">\n      </ion-avatar>\n      <h2>Hisham Toure (UI/UX Designer)</h2>\n      <p>Hello there</p>\n      <!-- <p  item-right>19:32</p> -->\n      <ion-badge style="margin-top: 30px" item-right color="testone">3</ion-badge>\n    </ion-item>\n\n\n    <ion-item  (click)="gotoChat(user)">\n      <ion-avatar item-left>\n        <img src="../../assets/three.jpg">\n      </ion-avatar>\n      <h2>Edung Divine (Expert iOS Developer)</h2>\n      <p>Have you started to make the designs</p>\n    </ion-item>\n\n\n    <ion-item  (click)="gotoChat(user)">\n      <ion-avatar item-left>\n        <img src="../../assets/two.jpg">\n      </ion-avatar>\n      <h2>John Doe (Project Manager)</h2>\n      <p>What will you like to do to the app</p>\n    </ion-item>\n\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/chats/chats.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */]])
     ], ChatsPage);
     return ChatsPage;
 }());
@@ -96,7 +96,7 @@ var ChatsPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__ = __webpack_require__(335);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__ = __webpack_require__(337);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_auth___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app__ = __webpack_require__(198);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase_app__);
@@ -151,7 +151,319 @@ var AuthProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 242:
+/***/ 212:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SetupprofilePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_countriesapi_countriesapi__ = __webpack_require__(356);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase_app__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase_app__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tabsfreelancer_tabsfreelancer__ = __webpack_require__(195);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+/**
+ * Generated class for the SetupprofilePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var SetupprofilePage = /** @class */ (function () {
+    function SetupprofilePage(navCtrl, modalCtrl, keyboard, loadingCtrl, toastCtrl, countriesApi, alertCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.modalCtrl = modalCtrl;
+        this.keyboard = keyboard;
+        this.loadingCtrl = loadingCtrl;
+        this.toastCtrl = toastCtrl;
+        this.countriesApi = countriesApi;
+        this.alertCtrl = alertCtrl;
+        this.navParams = navParams;
+        this.firedata = __WEBPACK_IMPORTED_MODULE_3_firebase_app__["database"]();
+        this.list = ['Android',
+            'UI',
+            'Photoshop',
+            'Excel',
+            'Xcode',
+            'Ionic',
+            'Visual Studio',
+            'React',
+            'Vue',
+            'iOS',
+            'Project Management',
+            'Swift'];
+        this.input = '';
+        this.countries = [];
+        this.skillstobeuploaded = [];
+        this.isshidden = true;
+        this.writeup = "";
+        this.experienceslist = [];
+        this.shouldhidetext = false;
+        this.shouldhidetexttwo = false;
+        this.getData = function (data) {
+            return new Promise(function (resolve, reject) {
+                resolve();
+                console.log(resolve);
+            });
+        };
+        this.fullname = this.navParams.get('fullname');
+        this.hourlyrate = '0';
+    }
+    SetupprofilePage.prototype.add = function (item, i) {
+        this.isshidden = false;
+        // this.input = item;
+        var currentskills = document.getElementById("currentskills");
+        // if(this.skillstobeuploaded.length == 0){
+        currentskills.innerHTML = item + " | " + currentskills.innerHTML;
+        console.log(item, i);
+        this.skillstobeuploaded.push(item);
+        // }
+        // else{
+        //   this.skillstobeuploaded.forEach(skill => {
+        //       if(item == skill){
+        //           this.presentToast('You have already added this skill');
+        //       }else{
+        //         currentskills.innerHTML = item + " | " + currentskills.innerHTML;
+        //         console.log(item);
+        //         this.skillstobeuploaded.push(item);
+        //         this.countries = [];
+        //         this.list.splice(item);
+        //       }
+        //   });
+        // }
+        this.countries = [];
+    };
+    SetupprofilePage.prototype.removeFocus = function () {
+        this.keyboard.close();
+    };
+    SetupprofilePage.prototype.ionViewDidLoad = function () {
+        if (this.writeup.length != 0) {
+            this.shouldhidetexttwo = true;
+        }
+    };
+    SetupprofilePage.prototype.search = function () {
+        var _this = this;
+        if (!this.input.trim().length || !this.keyboard.isOpen()) {
+            this.countries = [];
+            return;
+        }
+        this.countries = this.list.filter(function (item) { return item.toUpperCase().includes(_this.input.toUpperCase()); });
+    };
+    SetupprofilePage.prototype.presentModal = function () {
+        // const modal = this.modalCtrl.create(ModalPage);
+        // modal.onDidDismiss(data => {
+        //   console.log(data);
+        //   this.writeup == data;
+        //   });
+        // modal.present();
+        // this.navCtrl.push(ModalPage);
+        // callback...
+        // push page...
+        // this.navCtrl.push(ModalPage, {
+        // callback: this.myCallbackFunction
+        // });
+        // this.navCtrl.push(ModalPage,
+        //   {
+        //       // data: this.data,
+        //       callback: this.getData
+        //   });
+    };
+    SetupprofilePage.prototype.presentToast = function (message) {
+        var toast = this.toastCtrl.create({
+            message: message,
+            duration: 3000,
+            position: 'top'
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    SetupprofilePage.prototype.showBox = function (index) {
+        var _this = this;
+        var placeholder;
+        var type;
+        var classtouse;
+        switch (index) {
+            case 0:
+                placeholder = "Full Name";
+                type = 'text';
+                break;
+            case 1:
+                placeholder = "Hourly Rate";
+                type = 'number';
+                break;
+            case 3:
+                placeholder = "Hourly Rate";
+                type = 'number';
+                this.presentModal();
+                break;
+        }
+        var inputs = [
+            {
+                name: 'clickedsumtn',
+                placeholder: placeholder,
+                type: type
+            }
+        ];
+        if (index == 2) {
+            inputs = [
+                {
+                    name: 'role',
+                    placeholder: 'Role',
+                    type: 'text'
+                },
+                {
+                    name: 'company',
+                    placeholder: 'Company',
+                    type: 'text'
+                },
+            ];
+        }
+        var alert = this.alertCtrl.create({
+            inputs: inputs,
+            cssClass: classtouse,
+            buttons: [
+                {
+                    text: 'Cancel',
+                    role: 'cancel',
+                    handler: function (data) {
+                    }
+                },
+                {
+                    text: 'Ok',
+                    handler: function (data) {
+                        switch (index) {
+                            case 0:
+                                _this.fullname = data.clickedsumtn;
+                                break;
+                            case 1:
+                                _this.hourlyrate = data.clickedsumtn;
+                                break;
+                            case 2:
+                                if (data.role != "" && data.role != null && data.company != "" && data.company != null) {
+                                    _this.experienceslist.push({
+                                        role: data.role,
+                                        company: data.company
+                                    });
+                                }
+                                else if (data.role == "" || data.role == null) {
+                                    _this.presentToast("Role Field Cannot be left blank");
+                                }
+                                else if (data.company == "" || data.company == null) {
+                                    _this.presentToast("Company name cannot be left blank");
+                                }
+                        }
+                        if (_this.experienceslist.length != 0) {
+                            _this.shouldhidetext = true;
+                        }
+                    }
+                }
+            ]
+        });
+        if (index != 3) {
+            alert.present();
+        }
+        else if (index == 3) {
+            alert.dismiss();
+        }
+    };
+    SetupprofilePage.prototype.removeExperience = function (experience, index) {
+        this.experienceslist.splice(index, 1);
+        console.log(this.experienceslist.length);
+        if (this.experienceslist.length == 0) {
+            this.shouldhidetext = false;
+        }
+    };
+    SetupprofilePage.prototype.saveprofile = function () {
+        var _this = this;
+        var load = this.loadingCtrl.create({
+            content: 'Setting up your Profile',
+        });
+        load.present();
+        this.firedata.ref('/users').child(__WEBPACK_IMPORTED_MODULE_3_firebase_app__["auth"]().currentUser.uid).update({
+            hourlyRate: '$' + this.hourlyrate + '/hr',
+            skillstags: this.skillstobeuploaded,
+            experiences: this.experienceslist,
+            aboutMe: this.writeup
+        }).then(function () {
+            _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__tabsfreelancer_tabsfreelancer__["a" /* TabsfreelancerPage */]);
+            load.dismiss();
+        }).catch(function (err) {
+            _this.presentToast(err);
+            load.dismiss();
+        });
+    };
+    SetupprofilePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-setupprofile',template:/*ion-inline-start:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/setupprofile/setupprofile.html"*/'<ion-header>\n    <ion-navbar ion-fixed align-title="center"  color="light">\n        <ion-title color="primary">  \n          Setup Your Profile\n        </ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  \n  <ion-content padding>\n  \n    <p align="center">\n      <!-- <div class="user-photo"> -->\n        <img class="user-photo"\n         src="../../assets/one.jpg">\n      <!-- </div> -->\n    </p>\n  \n    <div (click)="showBox(0)">\n        <h4 align="center">{{fullname}}\n            <ion-icon item-right name="ios-create-outline"></ion-icon></h4>\n    </div>\n\n    <div [hidden]="isshidden" (click)="revert()">\n        <p style="margin-left: 30px;margin-right:30px" id="currentskills" align="center">\n            <ion-icon item-right name="ios-create-outline"></ion-icon>\n          </p>\n\n    </div>\n\n    <div (click)="showBox(1)">\n        <p align="center">Hourly Rate - ${{hourlyrate}}/hr\n            <ion-icon item-right name="ios-create-outline"></ion-icon>\n          </p>\n    </div>\n \n    <br>\n      <ion-list>\n\n          <ion-list-header>Skills\n          </ion-list-header>\n\n              <div class="autocomplete">\n                  <ion-item>\n                    <ion-input  type="text" \n                                placeholder="Search skill tags here"\n                                [(ngModel)]="input"\n                                (ionChange)="search()"\n                                (ionBlur)="removeFocus()"\n                                debounce=500>\n                              </ion-input>\n                  </ion-item>\n                  <ion-list>\n                    <ion-item *ngFor="let country of countries" (click)="add(country, i)">\n                      {{country}}\n                    </ion-item>\n                  </ion-list>\n            </div>\n\n        <ion-list-header (click)="showBox(2)">My Experiences\n            <ion-icon item-right name="ios-create-outline"></ion-icon>\n        </ion-list-header>\n\n        <p [hidden]="shouldhidetext" style="margin-left: 20px">No Experiences Added Yet, Click the icon above to add experiences</p>\n  \n        <ion-item *ngFor="let experience of experienceslist; let i= index">\n          <ion-avatar item-left>\n            <img src="../../assets/upwork.png">\n          </ion-avatar>\n          <b>{{experience.role}}</b><br>\n          {{experience.company}}\n          <ion-icon \n          name="ios-remove-circle-outline" (click)="removeExperience(experience, i)" item-right></ion-icon>\n        </ion-item>\n<!--   \n        <ion-item>\n            <ion-avatar item-left>\n              <img src="../../assets/upwork.png">\n            </ion-avatar>\n            <b>Android Developer</b><br>\n            Upwork\n          <ion-icon name="ios-remove-circle-outline" item-right></ion-icon>\n          </ion-item>\n   -->\n\n\n\n\n\n\n\n          <br>\n          <ion-list-header (click)="showBox(3)">About Me\n            <ion-icon item-right name="ios-create-outline"></ion-icon>\n          </ion-list-header>\n\n        <p [hidden]="shouldhidetexttwo" style="margin-left: 20px">Click the button above to tell the Tech-Tinder community about yourself</p>\n\n          <div id="writeup" style="margin: 15px; font-size: 16px">\n             {{writeup}}\n          </div>\n      </ion-list>\n\n      <p align="center">\n          <button ion-button outline (click)="saveprofile()" class="bsuccess">SAVE PROFILE</button>\n      </p>\n  </ion-content>\n  '/*ion-inline-end:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/setupprofile/setupprofile.html"*/,
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ModalController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Keyboard */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Keyboard */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ToastController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__providers_countriesapi_countriesapi__["a" /* CountriesapiProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_countriesapi_countriesapi__["a" /* CountriesapiProvider */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]) === "function" && _h || Object])
+    ], SetupprofilePage);
+    return SetupprofilePage;
+    var _a, _b, _c, _d, _e, _f, _g, _h;
+}());
+
+//# sourceMappingURL=setupprofile.js.map
+
+/***/ }),
+
+/***/ 213:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsclientPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chats_chats__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shortlisted_shortlisted__ = __webpack_require__(359);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__freelancers_freelancers__ = __webpack_require__(360);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var TabsclientPage = /** @class */ (function () {
+    function TabsclientPage() {
+        this.tab1Root = __WEBPACK_IMPORTED_MODULE_3__freelancers_freelancers__["a" /* FreelancersPage */];
+        this.tab2Root = __WEBPACK_IMPORTED_MODULE_1__chats_chats__["a" /* ChatsPage */];
+        this.tab3Root = __WEBPACK_IMPORTED_MODULE_2__shortlisted_shortlisted__["a" /* ShortlistedPage */];
+    }
+    TabsclientPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/tabsclient/tabsclient.html"*/'<ion-tabs>\n  <ion-tab [root]="tab1Root" tabTitle="Freelancers" tabIcon="ios-people"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="Chats" tabIcon="ios-chatbubbles"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="ShortListed" tabIcon="ios-contacts"></ion-tab>\n</ion-tabs>'/*ion-inline-end:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/tabsclient/tabsclient.html"*/,
+        }),
+        __metadata("design:paramtypes", [])
+    ], TabsclientPage);
+    return TabsclientPage;
+}());
+
+//# sourceMappingURL=tabsclient.js.map
+
+/***/ }),
+
+/***/ 244:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -164,20 +476,20 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 242;
+webpackEmptyAsyncContext.id = 244;
 
 /***/ }),
 
-/***/ 285:
+/***/ 287:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/jobtags/jobtags.module": [
-		636,
+		637,
 		1
 	],
 	"../pages/usertype/usertype.module": [
-		637,
+		638,
 		0
 	]
 };
@@ -192,22 +504,22 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 285;
+webpackAsyncContext.id = 287;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 328:
+/***/ 330:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(194);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tabsfreelancer_tabsfreelancer__ = __webpack_require__(195);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_auth_auth__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__register_register__ = __webpack_require__(353);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__register_register__ = __webpack_require__(355);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -291,12 +603,12 @@ var LoginPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-login',template:/*ion-inline-start:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/login/login.html"*/'\n\n<ion-content class="content_bg" padding>\n\n    <br>\n  <br>\n  <p align="center">\n    <img src="../../assets/icon.png" height="110">\n    <!-- <b style="font-size: 35px; color: white">ech-Tinder</b> -->\n  </p>\n\n  <br>\n    <ion-list class="listt">  \n        <ion-item class="listt">\n          <ion-label floating>E-mail or Phone</ion-label>\n          <ion-input type="email" [(ngModel)]="email"></ion-input>\n        </ion-item>\n    \n        <ion-item class="listt">\n            <ion-label floating>Password</ion-label>\n            <ion-input type="password" [(ngModel)]="password"></ion-input>\n        </ion-item>\n      </ion-list>\n\n      <button ion-button (click)="signIn()" block class="btn success">SIGN IN</button>\n\n      <!-- <p align="center"><b >Or</b></p> -->\n      <button ion-button \n      block style="border-radius: 5px;\n      margin-top: 20px;\n      margin-left: 30px;\n      width: 75vw;" \n      color="testone">\n      <ion-icon style="font-size: 30px;\n       position: absolute; left: 20px;" name="logo-linkedin"></ion-icon>                    \n       Sign in with LinkedIn\n  </button>\n\n      <br>\n      <br>\n      \n      <div>\n        <b class="forgotp">FORGOT PASSWORD?</b>\n        <b class="joinn" (click)="signUp()">JOIN NOW</b>\n      </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/login/login.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ToastController */],
             __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
             __WEBPACK_IMPORTED_MODULE_4__providers_auth_auth__["a" /* AuthProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]])
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]])
     ], LoginPage);
     return LoginPage;
 }());
@@ -305,14 +617,14 @@ var LoginPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 330:
+/***/ 332:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatdetailsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_chat_service__ = __webpack_require__(331);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_chat_service__ = __webpack_require__(333);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -467,7 +779,7 @@ var ChatdetailsPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-chatdetails',template:/*ion-inline-start:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/chatdetails/chatdetails.html"*/'<ion-header>\n\n  <ion-navbar color="testone">\n    <ion-title>{{toUser.name}}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n  <div class="message-wrap">\n\n    <div *ngFor="let msg of msgList"\n         class="message"\n         [class.left]=" msg.userId === toUser.id "\n         [class.right]=" msg.userId === user.id ">\n      <img class="user-img" [src]="msg.userAvatar" alt="" src="">\n      <ion-spinner name="dots" *ngIf="msg.status === \'pending\'"></ion-spinner>\n      <div class="msg-detail">\n        <div class="msg-info">\n          <p>\n            <!-- {{msg.userName}}&nbsp;&nbsp;&nbsp;{{msg.time | relativeTime}}</p> -->\n        </div>\n        <div class="msg-content">\n          <span class="triangle"></span>\n          <p class="line-breaker ">{{msg.message}}</p>\n        </div>\n      </div>\n    </div>\n\n  </div>\n\n</ion-content>\n\n<ion-footer no-border [style.height]="showEmojiPicker ? \'255px\' : \'55px\'">\n <div class="input-wrap">\n    <button ion-button clear icon-only item-right (click)="switchEmojiPicker()">\n      <ion-icon name="md-happy"></ion-icon>\n    </button>\n    <textarea #chat_input\n              placeholder="Text Input"\n              [(ngModel)]="editorMsg"\n              (keyup.enter)="sendMsg()"\n              (focusin)="onFocus()">\n    </textarea>\n    <button ion-button clear icon-only item-right (click)="sendMsg()">\n      <ion-icon name="ios-send" ios="ios-send" md="md-send"></ion-icon>\n    </button>\n  </div>\n   <!-- <emoji-picker [(ngModel)]="editorMsg"></emoji-picker> -->\n</ion-footer>\n'/*ion-inline-end:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/chatdetails/chatdetails.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__providers_chat_service__["a" /* ChatService */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */]])
     ], ChatdetailsPage);
@@ -478,7 +790,7 @@ var ChatdetailsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 331:
+/***/ 333:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -486,8 +798,8 @@ var ChatdetailsPage = /** @class */ (function () {
 /* unused harmony export UserInfo */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operators_map__ = __webpack_require__(527);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operators_map__ = __webpack_require__(528);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operators_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_operators_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(107);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -566,14 +878,14 @@ var ChatService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 332:
+/***/ 334:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return JobsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation_ngx__ = __webpack_require__(333);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation_ngx__ = __webpack_require__(335);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -754,8 +1066,8 @@ var JobsPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-jobs',template:/*ion-inline-start:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/jobs/jobs.html"*/'<!-- <ion-header>\n  <ion-navbar color="transparent">\n    <ion-buttons start>\n      <button ion-button menuToggle>\n      <ion-icon name="menu" color="dark"></ion-icon>\n    </button>\n    </ion-buttons>\n\n    <ion-searchbar class="searchitem"\n    animated="true" \n   placeholder="Search for talents close to you"></ion-searchbar>\n\n    <ion-buttons end>\n      <button ion-button icon-only (click)="openSecondModal()">\n          <ion-icon  class="icon ion-home custom-icon" name="notifications"></ion-icon>\n      </button>\n  </ion-buttons>\n  </ion-navbar>\n</ion-header> -->\n\n<ion-content class="maincontent">\n\n\n\n\n\n  <ion-fab bottom right >\n    <button color="testone" ion-fab mini>\n      <ion-icon name="md-add"></ion-icon>\n    </button>\n  </ion-fab>\n\n  <ion-fab bottom right style="margin-right: 45px">\n    <button color="testone" ion-fab mini>\n      <ion-icon name="md-remove"></ion-icon>\n    </button>\n  </ion-fab>\n\n\n\n  <div  #map id="map">\n  </div>\n\n\n  <ion-card class="headercard">\n    <ion-grid style="height: 50px;">\n      <ion-row>\n        <ion-col col-1>\n        <ion-icon menuToggle style="font-size: 27px; margin-left: 10px; float: left;" \n        name="menu" color="dark"></ion-icon>                      \n        </ion-col>\n\n        <ion-col>\n          <ion-searchbar animated="true" \n          placeholder="Find jobs close to you" class="mysearch"></ion-searchbar>\n            <!-- <ion-searchbar animated="true" \n        placeholder="Search for talents close to you" class="mysearchbar"></ion-searchbar>-->\n        </ion-col>\n\n        <ion-col col-1>\n        <ion-icon style="font-size: 27px; \n        margin-right: 10px; float: right;" name="notifications-outline" \n        color="dark"></ion-icon>                                  \n        </ion-col>\n      </ion-row>\n    </ion-grid>\n\n    <!-- <div>\n        <ion-icon style="font-size: 27px; margin-left: 20px; float: left; margin-top: 1px; margin-bottom: 1px;" name="menu" color="dark"></ion-icon>            \n        <ion-searchbar style="float: left;" animated="true" \n        placeholder="Search for talents close to you" class="mysearchbar"></ion-searchbar>\n    </div>\n         -->\n    </ion-card>\n\n  <p align="center" id="intitalstring">\n    <b>Edung Divinefavour</b><br>\n    Hourly rate - $12.5/hr<br>\n    Skills - Android | UI/UX\n    <br>\n    <br>\n    <button onclick="Window.myComponent.viewProfile()" class="contactbtn">View Profile</button>\n  </p>\n</ion-content>\n'/*ion-inline-end:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/jobs/jobs.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ToastController */],
             __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation_ngx__["a" /* Geolocation */]])
     ], JobsPage);
     return JobsPage;
@@ -765,13 +1077,13 @@ var JobsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 334:
+/***/ 336:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfilefreelancerPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -839,9 +1151,9 @@ var ProfilefreelancerPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-profilefreelancer',template:/*ion-inline-start:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/profilefreelancer/profilefreelancer.html"*/'<ion-header>\n  <ion-navbar ion-fixed align-title="center"  color="light">\n      <ion-title color="primary">  \n        My Profile\n      </ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n  <p align="center">\n    <!-- <div class="user-photo"> -->\n      <img class="user-photo"\n       src="../../assets/one.jpg">\n    <!-- </div> -->\n  </p>\n\n  <h4 align="center">Edung Divinefavour\n  <ion-icon item-right name="ios-create-outline"></ion-icon>\n\n  </h4>\n  <p align="center">Android | UI/UX Design | Flutter | Ionic<br>\n  Adwords | Analytics | Email Marketing\n  <ion-icon item-right name="ios-create-outline"></ion-icon>\n\n  </p>\n\n  <p align="center">Hourly Rate - $12.5/hr\n    <ion-icon item-right name="ios-create-outline"></ion-icon>\n\n  </p>\n\n  <!-- <ion-grid>\n    <ion-row>\n      <ion-col>\n          <button class="btn">MESSAGE</button>\n      </ion-col>\n\n      <ion-col>\n        <button class="btntwo">\n          SHORTLIST\n    </button>\n      </ion-col>\n    </ion-row>\n  </ion-grid> -->\n\n  <br>\n  <ion-list>\n    <ion-list>\n      <ion-list-header>My Experiences\n          <ion-icon item-right name="ios-create-outline"></ion-icon>\n      </ion-list-header>\n\n      <ion-item>\n        <ion-avatar item-left>\n          <img src="../../assets/upwork.png">\n        </ion-avatar>\n        <b>UI Designer</b><br>\n        Upwork\n      </ion-item>\n\n      <ion-item>\n          <ion-avatar item-left>\n            <img src="../../assets/upwork.png">\n          </ion-avatar>\n          <b>Android Developer</b><br>\n          Upwork\n        </ion-item>\n\n        <br>\n        <ion-list-header>About Me\n          <ion-icon item-right name="ios-create-outline"></ion-icon>\n        </ion-list-header>\n        <div style="margin: 15px; font-size: 16px">\n            I am an Expert Cross platform Mobile Developer with over 4 years experience building mobile apps with Java, Kotlin, Swift, Objective-C, Ionic and Flutter. \n      \n            I build/maintain/debug mobile apps as a hobby, therefore, I have expert knowledge on a lot of areas and tools that extend the Android and iOS framework to whatever is to be achieved.\n\n            I look forward to working with you\n        </div>\n    </ion-list>\n  </ion-list>\n\n  <!-- <div class="topdiv" >\n\n    <div style="width: 100%; height: 10vh;"></div>\n    <div align="center"><b style="font-size: 16px; color: white">Expert Cross Platform Developer</b></div> \n    <div align="center" style="font-size: 14px; color: white">\n      <ion-icon></ion-icon>\n      Port Harcourt, Nigeria\n   </div>     \n   <div style="width: 100%; height: 3vh;"></div>\n   \n    <div align="center"><b style="font-size: 16px; margin-top: 10px; color: white">$12.50/hr</b></div> \n    \n    \n    <div class="user-photo">\n      <img src="../../assets/one.jpg">\n    </div>\n\n\n    \n    <ion-grid >\n      <ion-row style="padding-left: 110px; margin-top: 5vh">\n              <ion-col col-5>\n                  <div >\n                      <ion-card style="padding: 7px">\n                          Android\n                        </ion-card>\n                  </div>\n                  \n                </ion-col>\n                  \n                <ion-col col-4>\n                    <div >\n                        <ion-card style="padding: 7px">\n                            UI/UX\n                          </ion-card>\n                    </div>\n                    \n                  </ion-col>\n\n                 \n      </ion-row>\n    </ion-grid>\n\n\n  </div> -->\n<!--   \n  <div style="margin-top: 12vh"></div>\n  <div style="margin: 15px; font-size: 16px">\n      I am an Expert Cross platform Mobile Developer with over 4 years experience building mobile apps with Java, Kotlin, Swift, Objective-C, Ionic and Flutter. \n\n      I build/maintain/debug mobile apps as a hobby, therefore, I have expert knowledge on a lot of areas and tools that extend the Android and iOS framework to whatever is to be achieved.\n      \n      Quality is very important to me so I always write readable and maintainable codes using best practices, clean architectural principles with reactive approach and MVVM pattern.\n      \n      I always ensure that every product is thoroughly tested on multiple devices before its release. I follow requirements strictly without missing a step and I can also share my ideas if you are nor sure of how something should work.\n      \n      I am reachable on Upwork and through any other means of communication. I am also comfortable working remotely with tools like Teamviewer, Anydesk or goToMeeting.. \n      \n      What matters to me is to actually make your ideas a reality. \n      I will like to be a part of your project and make it a success, nothing gives me more joy. \n      \n      I look forward to working with you\n  </div>\n -->\n\n  <!-- <div>\n    <ion-list>\n      \n          <ion-item-divider>\n              Account Info \n              <ion-icon color="white" name="ios-create-outline" \n              \n              item-right></ion-icon>   \n          </ion-item-divider>\n\n          <ion-item detail-push (click)="showBox(0)">\n              Edung\n              <ion-icon color="white" name="ios-contact-outline" item-left></ion-icon>   \n          </ion-item>\n\n          <ion-item detail-push (click)="showBox(1)">\n              Divinefavour \n              <ion-icon color="white" name="ios-contact-outline" item-left></ion-icon>   \n          </ion-item>\n\n          <ion-item detail-push (click)="showBox(2)">\n              lawrenedickson49@gmail.com \n              <ion-icon color="white" name="ios-mail-outline" item-left></ion-icon>   \n          </ion-item>\n\n\n\n\n\n          <ion-item-divider>\n              Change Password\n              <ion-icon color="white" name="ios-create-outline" \n              item-right></ion-icon>   \n          </ion-item-divider>\n\n          <ion-item detail-push (click)="showBox(3)">\n              New Password\n              <ion-icon color="white" name="ios-lock-outline" item-left></ion-icon>   \n          </ion-item>\n\n          <ion-item detail-push (click)="showBox(4)">\n              Confirm Password \n              <ion-icon color="white" name="ios-lock-outline" item-left></ion-icon>   \n          </ion-item>\n\n\n          <ion-item-divider>\n              Connected Accounts\n              <ion-icon color="white" name="ios-create-outline" \n              item-right></ion-icon>   \n          </ion-item-divider>\n\n    </ion-list>\n  </div> -->\n\n  \n</ion-content>\n'/*ion-inline-end:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/profilefreelancer/profilefreelancer.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]])
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]])
     ], ProfilefreelancerPage);
     return ProfilefreelancerPage;
 }());
@@ -850,16 +1162,17 @@ var ProfilefreelancerPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 353:
+/***/ 355:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__setupprofile_setupprofile__ = __webpack_require__(354);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_linkedin_ngx__ = __webpack_require__(356);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__setupprofile_setupprofile__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_linkedin_ngx__ = __webpack_require__(358);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__tabsclient_tabsclient__ = __webpack_require__(213);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -869,6 +1182,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -932,7 +1246,14 @@ var RegisterPage = /** @class */ (function () {
             });
             load_1.present();
             this.auth.signUpWithEmail(this.email, this.password, this.fullname, this.userType).then(function () {
-                _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_3__setupprofile_setupprofile__["a" /* SetupprofilePage */]);
+                if (_this.userType == "freelancer") {
+                    _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_3__setupprofile_setupprofile__["a" /* SetupprofilePage */], {
+                        'fullname': _this.fullname
+                    });
+                }
+                else if (_this.userType == "recruiter") {
+                    _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_5__tabsclient_tabsclient__["a" /* TabsclientPage */]);
+                }
                 load_1.dismiss();
             }).catch(function (err) {
                 console.log(err);
@@ -959,12 +1280,12 @@ var RegisterPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-register',template:/*ion-inline-start:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/register/register.html"*/'\n\n<ion-content class="content_bg" padding>\n\n<p align="center">\n  <img src="../../assets/icon.png" height="110">\n  <!-- <b style="font-size: 35px; color: white">ech-Tinder</b> -->\n</p>\n\n  <ion-list class="listt">  \n    \n      <ion-item class="listt">\n          <ion-label floating>Full Name</ion-label>\n          <ion-input [(ngModel)]="fullname"></ion-input>\n        </ion-item>\n\n      <ion-item class="listt">\n        <ion-label floating>E-mail or Phone</ion-label>\n        <ion-input type="email" [(ngModel)]="email"></ion-input>\n      </ion-item>\n  \n      <ion-item class="listt">\n          <ion-label floating>Password</ion-label>\n          <ion-input type="password" [(ngModel)]="password"></ion-input>\n      </ion-item>\n    </ion-list>\n\n    <h5 style="text-align: center; opacity: 0.7">I want to be a </h5>\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n            <ion-card\n            [ngStyle]="{\'background-color\': cardbackgroundr}"\n            (click)="isRecruiter()"\n             class="choosecard">\n             <h2 \n            [ngStyle]="{\'color\': cardtextr}"             \n             style="opacity: 0.8">Recruiter\n            </h2></ion-card>\n        </ion-col>\n        <ion-col>\n            <ion-card \n            [ngStyle]="{\'background-color\': cardbackgroundf}"            \n            (click)="isFreelancer()" class="choosecard">\n            <h2\n            [ngStyle]="{\'color\': cardtextf}"             \n             style="opacity: 0.8">Freelancer</h2>\n          </ion-card>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n\n    \n\n    <button ion-button (click)="signUp()" block class="btn success">JOIN NOW</button>\n\n    <!-- <p align="center"><b >Or</b></p> -->\n    <button ion-button \n    (click)="linkedinsignup()"\n    block style="border-radius: 5px;\n    margin-top: 20px;\n    margin-left: 30px;\n    width: 75vw;" \n    color="testone">\n    <ion-icon style="font-size: 30px;\n     position: absolute; left: 20px;" name="logo-linkedin"></ion-icon>                    \n     Join now with LinkedIn!\n</button>\n\n    <br>\n    <br>\n    \n    <div>\n      <!-- <b class="forgotp">F?</b> -->\n      <b class="joinn" (click)="alreadyaMember()">ALREADY A MEMBER?</b>\n    </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/register/register.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_4__ionic_native_linkedin_ngx__["a" /* LinkedIn */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */],
             __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__["a" /* AuthProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]])
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]])
     ], RegisterPage);
     return RegisterPage;
 }());
@@ -973,198 +1294,7 @@ var RegisterPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 354:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SetupprofilePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_countriesapi_countriesapi__ = __webpack_require__(355);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase_app__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase_app__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tabsfreelancer_tabsfreelancer__ = __webpack_require__(195);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-/**
- * Generated class for the SetupprofilePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var SetupprofilePage = /** @class */ (function () {
-    function SetupprofilePage(navCtrl, keyboard, loadingCtrl, toastCtrl, countriesApi, alertCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.keyboard = keyboard;
-        this.loadingCtrl = loadingCtrl;
-        this.toastCtrl = toastCtrl;
-        this.countriesApi = countriesApi;
-        this.alertCtrl = alertCtrl;
-        this.navParams = navParams;
-        this.firedata = __WEBPACK_IMPORTED_MODULE_3_firebase_app__["database"]();
-        this.list = ['Android',
-            'UI',
-            'Photoshop',
-            'Excel',
-            'Xcode',
-            'Ionic',
-            'Visual Studio',
-            'React',
-            'Vue',
-            'iOS',
-            'Project Management',
-            'Swift'];
-        this.input = '';
-        this.countries = [];
-        this.skillstobeuploaded = [];
-        this.isshidden = true;
-    }
-    SetupprofilePage.prototype.add = function (item, i) {
-        this.isshidden = false;
-        // this.input = item;
-        var currentskills = document.getElementById("currentskills");
-        // if(this.skillstobeuploaded.length == 0){
-        currentskills.innerHTML = item + " | " + currentskills.innerHTML;
-        console.log(item, i);
-        this.skillstobeuploaded.push(item);
-        // }
-        // else{
-        //   this.skillstobeuploaded.forEach(skill => {
-        //       if(item == skill){
-        //           this.presentToast('You have already added this skill');
-        //       }else{
-        //         currentskills.innerHTML = item + " | " + currentskills.innerHTML;
-        //         console.log(item);
-        //         this.skillstobeuploaded.push(item);
-        //         this.countries = [];
-        //         this.list.splice(item);
-        //       }
-        //   });
-        // }
-        this.countries = [];
-    };
-    SetupprofilePage.prototype.removeFocus = function () {
-        this.keyboard.close();
-    };
-    SetupprofilePage.prototype.search = function () {
-        var _this = this;
-        if (!this.input.trim().length || !this.keyboard.isOpen()) {
-            this.countries = [];
-            return;
-        }
-        this.countries = this.list.filter(function (item) { return item.toUpperCase().includes(_this.input.toUpperCase()); });
-    };
-    SetupprofilePage.prototype.presentToast = function (message) {
-        var toast = this.toastCtrl.create({
-            message: message,
-            duration: 3000,
-            position: 'top'
-        });
-        toast.onDidDismiss(function () {
-            console.log('Dismissed toast');
-        });
-        toast.present();
-    };
-    SetupprofilePage.prototype.showBox = function (index) {
-        var placeholder;
-        switch (index) {
-            case 0:
-                placeholder = "Full Name";
-                break;
-            case 1:
-                placeholder = "Hourly Rate";
-                break;
-            case 3:
-                placeholder = document.getElementById('writeup').innerHTML;
-        }
-        var inputs = [
-            {
-                name: 'clickedsumtn',
-                placeholder: placeholder
-            }
-        ];
-        if (index == 2) {
-            inputs = [
-                {
-                    name: 'clickedsumtn',
-                    placeholder: 'Role'
-                },
-                {
-                    name: 'clickedsumtn',
-                    placeholder: 'Company'
-                },
-            ];
-        }
-        var alert = this.alertCtrl.create({
-            inputs: inputs,
-            buttons: [
-                {
-                    text: 'Cancel',
-                    role: 'cancel',
-                    handler: function (data) {
-                        console.log('Cancel clicked');
-                    }
-                },
-                {
-                    text: 'Ok',
-                    handler: function (data) {
-                    }
-                }
-            ]
-        });
-        alert.present();
-    };
-    SetupprofilePage.prototype.saveprofile = function () {
-        var _this = this;
-        var load = this.loadingCtrl.create({
-            content: 'Setting up your Profile',
-        });
-        load.present();
-        this.firedata.ref('/users').child(__WEBPACK_IMPORTED_MODULE_3_firebase_app__["auth"]().currentUser.uid).update({
-            hourlyRate: '$12.5/hr',
-            skillstags: this.skillstobeuploaded,
-            aboutMe: document.getElementById('writeup').innerHTML
-        }).then(function () {
-            _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__tabsfreelancer_tabsfreelancer__["a" /* TabsfreelancerPage */]);
-            load.dismiss();
-        }).catch(function (err) {
-            _this.presentToast(err);
-            load.dismiss();
-        });
-    };
-    SetupprofilePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-setupprofile',template:/*ion-inline-start:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/setupprofile/setupprofile.html"*/'<ion-header>\n    <ion-navbar ion-fixed align-title="center"  color="light">\n        <ion-title color="primary">  \n          Setup Your Profile\n        </ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  \n  <ion-content padding>\n  \n    <p align="center">\n      <!-- <div class="user-photo"> -->\n        <img class="user-photo"\n         src="../../assets/one.jpg">\n      <!-- </div> -->\n    </p>\n  \n    <div (click)="showBox(0)">\n        <h4 align="center">Edung Divinefavour\n            <ion-icon item-right name="ios-create-outline"></ion-icon></h4>\n    </div>\n\n    <div [hidden]="isshidden" (click)="revert()">\n        <p style="margin-left: 30px;margin-right:30px" id="currentskills" align="center">\n            <ion-icon item-right name="ios-create-outline"></ion-icon>\n          </p>\n\n    </div>\n\n    <div (click)="showBox(1)">\n        <p align="center">Hourly Rate - $12.5/hr\n            <ion-icon item-right name="ios-create-outline"></ion-icon>\n          </p>\n    </div>\n \n    <br>\n      <ion-list>\n\n          <ion-list-header>Skills\n          </ion-list-header>\n\n              <div class="autocomplete">\n                  <ion-item>\n                    <ion-input  type="text" \n                                placeholder="Search skill tags here"\n                                [(ngModel)]="input"\n                                (ionChange)="search()"\n                                (ionBlur)="removeFocus()"\n                                debounce=500></ion-input>\n                  </ion-item>\n                  <ion-list>\n                    <ion-item *ngFor="let country of countries" (click)="add(country, i)">\n                      {{country}}\n                    </ion-item>\n                  </ion-list>\n            </div>\n\n        <ion-list-header (click)="showBox(2)">My Experiences\n            <ion-icon item-right name="ios-create-outline"></ion-icon>\n        </ion-list-header>\n  \n        <ion-item>\n          <ion-avatar item-left>\n            <img src="../../assets/upwork.png">\n          </ion-avatar>\n          <b>UI Designer</b><br>\n          Upwork\n          <ion-icon name="ios-remove-circle-outline" item-right></ion-icon>\n        </ion-item>\n  \n        <ion-item>\n            <ion-avatar item-left>\n              <img src="../../assets/upwork.png">\n            </ion-avatar>\n            <b>Android Developer</b><br>\n            Upwork\n          <ion-icon name="ios-remove-circle-outline" item-right></ion-icon>\n          </ion-item>\n  \n          <br>\n          <ion-list-header (click)="showBox(3)">About Me\n            <ion-icon item-right name="ios-create-outline"></ion-icon>\n          </ion-list-header>\n          <div id="writeup" style="margin: 15px; font-size: 16px">\n              I am an Expert Cross platform Mobile Developer with over 4 years experience building mobile apps with Java, Kotlin, Swift, Objective-C, Ionic and Flutter. \n        \n              I build/maintain/debug mobile apps as a hobby, therefore, I have expert knowledge on a lot of areas and tools that extend the Android and iOS framework to whatever is to be achieved.\n  \n              I look forward to working with you\n          </div>\n      </ion-list>\n\n      <p align="center">\n          <button ion-button outline (click)="saveprofile()" class="bsuccess">SAVE PROFILE</button>\n      </p>\n  </ion-content>\n  '/*ion-inline-end:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/setupprofile/setupprofile.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Keyboard */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_countriesapi_countriesapi__["a" /* CountriesapiProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]])
-    ], SetupprofilePage);
-    return SetupprofilePage;
-}());
-
-//# sourceMappingURL=setupprofile.js.map
-
-/***/ }),
-
-/***/ 355:
+/***/ 356:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1215,11 +1345,9 @@ var CountriesapiProvider = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsclientPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chats_chats__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shortlisted_shortlisted__ = __webpack_require__(358);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__freelancers_freelancers__ = __webpack_require__(359);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1231,33 +1359,44 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-
-var TabsclientPage = /** @class */ (function () {
-    function TabsclientPage() {
-        this.tab1Root = __WEBPACK_IMPORTED_MODULE_3__freelancers_freelancers__["a" /* FreelancersPage */];
-        this.tab2Root = __WEBPACK_IMPORTED_MODULE_1__chats_chats__["a" /* ChatsPage */];
-        this.tab3Root = __WEBPACK_IMPORTED_MODULE_2__shortlisted_shortlisted__["a" /* ShortlistedPage */];
+var ModalPage = /** @class */ (function () {
+    function ModalPage(navCtrl, element, navParams) {
+        this.navCtrl = navCtrl;
+        this.element = element;
+        this.navParams = navParams;
     }
-    TabsclientPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/tabsclient/tabsclient.html"*/'<ion-tabs>\n  <ion-tab [root]="tab1Root" tabTitle="Freelancers" tabIcon="ios-people"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="Chats" tabIcon="ios-chatbubbles"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="ShortListed" tabIcon="ios-contacts"></ion-tab>\n</ion-tabs>'/*ion-inline-end:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/tabsclient/tabsclient.html"*/,
+    ModalPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ModalPage');
+    };
+    ModalPage.prototype.autoSizeDescription = function () {
+        var textArea = this.element.nativeElement.getElementsByTagName('textarea')[0];
+        textArea.style.overflow = 'hidden';
+        textArea.style.height = 'auto';
+        textArea.style.height = textArea.scrollHeight + 'px';
+        return;
+    };
+    ModalPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-modal',template:/*ion-inline-start:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/modal/modal.html"*/'<!--\n  Generated template for the ModalPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="light">\n    <ion-buttons left>\n      <button navPop ion-button icon-only>\n        <ion-icon color="primary" name="arrow-back"></ion-icon>\n      </button>\n    </ion-buttons>\n\n\n    <ion-buttons right>\n      <button navPop ion-button icon-only (click)="goPrevious()">\n        <ion-icon color="primary" name="ios-checkmark-outline"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>Write about yourself</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <!-- <ion-textarea style="height: 40vh" placeholder="Write about yourself here">\n\n    </ion-textarea> -->\n\n    <ion-textarea type="text" [(ngModel)]="writeup" (input)="autoSizeDescription($event);"></ion-textarea>\n</ion-content>\n'/*ion-inline-end:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/modal/modal.html"*/,
         }),
-        __metadata("design:paramtypes", [])
-    ], TabsclientPage);
-    return TabsclientPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* ElementRef */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]])
+    ], ModalPage);
+    return ModalPage;
 }());
 
-//# sourceMappingURL=tabsclient.js.map
+//# sourceMappingURL=modal.js.map
 
 /***/ }),
 
-/***/ 358:
+/***/ 359:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShortlistedPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1281,7 +1420,7 @@ var ShortlistedPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-shortlisted',template:/*ion-inline-start:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/shortlisted/shortlisted.html"*/'<ion-header>\n  <ion-navbar color="light">\n    <ion-buttons start>\n      <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    </ion-buttons>\n\n    <ion-buttons end>\n      <button ion-button icon-only (click)="openSecondModal()">\n          <ion-icon  class="icon ion-home custom-icon" name="ios-search"></ion-icon>\n      </button>\n  </ion-buttons>\n    <ion-title>Shortlisted</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content>\n\n    <ion-list>\n\n\n      <ion-card>\n        <ion-item  (click)="gotoChat(user)">\n          <ion-avatar item-left>\n            <img src="../../assets/one.jpg">\n          </ion-avatar>\n          <b>Edung Divine (Expert iOS Developer)</b>\n          <p>Have you started to make the designs</p>\n        </ion-item>\n\n      </ion-card>\n\n\n      <ion-card>\n        <ion-item  (click)="gotoChat(user)">\n          <ion-avatar item-left>\n            <img src="../../assets/three.jpg">\n          </ion-avatar>\n          <b>Edung Divine (Expert iOS Developer)</b>\n          <p>Have you started to make the designs</p>\n        </ion-item>\n\n      </ion-card>\n      <ion-card>\n        <ion-item  (click)="gotoChat(user)">\n          <ion-avatar item-left>\n            <img src="../../assets/three.jpg">\n          </ion-avatar>\n          <b>Edung Divine (Expert iOS Developer)</b>\n          <p>Have you started to make the designs</p>\n        </ion-item>\n\n      </ion-card>\n      </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/shortlisted/shortlisted.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]])
     ], ShortlistedPage);
     return ShortlistedPage;
 }());
@@ -1290,14 +1429,14 @@ var ShortlistedPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 359:
+/***/ 360:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FreelancersPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__detailsfreelancer_detailsfreelancer__ = __webpack_require__(360);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__detailsfreelancer_detailsfreelancer__ = __webpack_require__(361);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1461,7 +1600,7 @@ var FreelancersPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-freelancers',template:/*ion-inline-start:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/freelancers/freelancers.html"*/'<!-- <ion-header>\n  <ion-navbar color="transparent">\n    <ion-buttons start>\n      <button ion-button menuToggle>\n      <ion-icon name="menu" color="dark"></ion-icon>\n    </button>\n    </ion-buttons>\n\n    <ion-searchbar class="searchitem"\n    animated="true" \n   placeholder="Search for talents close to you"></ion-searchbar>\n\n    <ion-buttons end>\n      <button ion-button icon-only (click)="openSecondModal()">\n          <ion-icon  class="icon ion-home custom-icon" name="notifications"></ion-icon>\n      </button>\n  </ion-buttons>\n  </ion-navbar>\n</ion-header> -->\n\n<ion-content class="maincontent">\n\n\n\n\n\n  <ion-fab bottom right >\n    <button color="testone" ion-fab mini>\n      <ion-icon name="md-add"></ion-icon>\n    </button>\n  </ion-fab>\n\n  <ion-fab bottom right style="margin-right: 45px">\n    <button color="testone" ion-fab mini>\n      <ion-icon name="md-remove"></ion-icon>\n    </button>\n  </ion-fab>\n\n\n\n  <div  #map id="map">\n  </div>\n\n\n  <ion-card class="headercard">\n    <ion-grid style="height: 50px;">\n      <ion-row>\n        <ion-col col-1>\n        <ion-icon menuToggle style="font-size: 27px; margin-left: 10px; float: left;" \n        name="menu" color="dark"></ion-icon>                      \n        </ion-col>\n\n        <ion-col>\n          <ion-searchbar animated="true" \n          placeholder="Find talents close to you" class="mysearch"></ion-searchbar>\n            <!-- <ion-searchbar animated="true" \n        placeholder="Search for talents close to you" class="mysearchbar"></ion-searchbar>-->\n        </ion-col>\n\n        <ion-col col-1>\n        <ion-icon style="font-size: 27px; \n        margin-right: 10px; float: right;" name="notifications-outline" \n        color="dark"></ion-icon>                                  \n        </ion-col>\n      </ion-row>\n    </ion-grid>\n\n    <!-- <div>\n        <ion-icon style="font-size: 27px; margin-left: 20px; float: left; margin-top: 1px; margin-bottom: 1px;" name="menu" color="dark"></ion-icon>            \n        <ion-searchbar style="float: left;" animated="true" \n        placeholder="Search for talents close to you" class="mysearchbar"></ion-searchbar>\n    </div>\n         -->\n    </ion-card>\n\n  <p align="center" id="intitalstring">\n    <b>Edung Divinefavour</b><br>\n    Hourly rate - $12.5/hr<br>\n    Skills - Android | UI/UX\n    <br>\n    <br>\n    <button onclick="Window.myComponent.viewProfile()" class="contactbtn">View Profile</button>\n  </p>\n</ion-content>\n'/*ion-inline-end:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/freelancers/freelancers.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */]])
     ], FreelancersPage);
     return FreelancersPage;
 }());
@@ -1470,13 +1609,13 @@ var FreelancersPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 360:
+/***/ 361:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailsfreelancerPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1506,7 +1645,7 @@ var DetailsfreelancerPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-detailsfreelancer',template:/*ion-inline-start:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/detailsfreelancer/detailsfreelancer.html"*/'<ion-header>\n    <ion-navbar ion-fixed align-title="center"  color="light">\n        <ion-title color="primary">  \n          Profile\n        </ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  \n  <ion-content padding>\n  \n    <p align="center">\n      <!-- <div class="user-photo"> -->\n        <img class="user-photo"\n         src="../../assets/one.jpg">\n      <!-- </div> -->\n    </p>\n\n    <h4 align="center">Edung Divinefavour</h4>\n    <p align="center">Android | UI/UX Design | Flutter | Ionic<br>\n    Adwords | Analytics | Email Marketing\n    </p>\n\n    <p align="center">Hourly Rate - $12.5/hr</p>\n\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n            <button class="btn">MESSAGE</button>\n        </ion-col>\n\n        <ion-col>\n          <button class="btntwo">\n            SHORTLIST\n      </button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n\n    <br>\n    <ion-list>\n      <ion-list>\n        <ion-list-header>Last Experience</ion-list-header>\n\n        <ion-item>\n          <ion-avatar item-left>\n            <img src="../../assets/upwork.png">\n          </ion-avatar>\n          <b>UI Designer</b><br>\n          Upwork\n        </ion-item>\n\n        <ion-item>\n            <ion-avatar item-left>\n              <img src="../../assets/upwork.png">\n            </ion-avatar>\n            <b>Android Developer</b><br>\n            Upwork\n          </ion-item>\n\n          <br>\n          <ion-list-header>About Edung</ion-list-header>\n          <div style="margin: 15px; font-size: 16px">\n              I am an Expert Cross platform Mobile Developer with over 4 years experience building mobile apps with Java, Kotlin, Swift, Objective-C, Ionic and Flutter. \n        \n              I build/maintain/debug mobile apps as a hobby, therefore, I have expert knowledge on a lot of areas and tools that extend the Android and iOS framework to whatever is to be achieved.\n  \n              I look forward to working with you\n          </div>\n      </ion-list>\n    </ion-list>\n\n    <!-- <div class="topdiv" >\n  \n      <div style="width: 100%; height: 10vh;"></div>\n      <div align="center"><b style="font-size: 16px; color: white">Expert Cross Platform Developer</b></div> \n      <div align="center" style="font-size: 14px; color: white">\n        <ion-icon></ion-icon>\n        Port Harcourt, Nigeria\n     </div>     \n     <div style="width: 100%; height: 3vh;"></div>\n     \n      <div align="center"><b style="font-size: 16px; margin-top: 10px; color: white">$12.50/hr</b></div> \n      \n      \n      <div class="user-photo">\n        <img src="../../assets/one.jpg">\n      </div>\n  \n  \n      \n      <ion-grid >\n        <ion-row style="padding-left: 110px; margin-top: 5vh">\n                <ion-col col-5>\n                    <div >\n                        <ion-card style="padding: 7px">\n                            Android\n                          </ion-card>\n                    </div>\n                    \n                  </ion-col>\n                    \n                  <ion-col col-4>\n                      <div >\n                          <ion-card style="padding: 7px">\n                              UI/UX\n                            </ion-card>\n                      </div>\n                      \n                    </ion-col>\n\n                   \n        </ion-row>\n      </ion-grid>\n  \n  \n    </div> -->\n<!--   \n    <div style="margin-top: 12vh"></div>\n    <div style="margin: 15px; font-size: 16px">\n        I am an Expert Cross platform Mobile Developer with over 4 years experience building mobile apps with Java, Kotlin, Swift, Objective-C, Ionic and Flutter. \n  \n        I build/maintain/debug mobile apps as a hobby, therefore, I have expert knowledge on a lot of areas and tools that extend the Android and iOS framework to whatever is to be achieved.\n        \n        Quality is very important to me so I always write readable and maintainable codes using best practices, clean architectural principles with reactive approach and MVVM pattern.\n        \n        I always ensure that every product is thoroughly tested on multiple devices before its release. I follow requirements strictly without missing a step and I can also share my ideas if you are nor sure of how something should work.\n        \n        I am reachable on Upwork and through any other means of communication. I am also comfortable working remotely with tools like Teamviewer, Anydesk or goToMeeting.. \n        \n        What matters to me is to actually make your ideas a reality. \n        I will like to be a part of your project and make it a success, nothing gives me more joy. \n        \n        I look forward to working with you\n    </div>\n   -->\n  \n    <!-- <div>\n      <ion-list>\n        \n            <ion-item-divider>\n                Account Info \n                <ion-icon color="white" name="ios-create-outline" \n                \n                item-right></ion-icon>   \n            </ion-item-divider>\n  \n            <ion-item detail-push (click)="showBox(0)">\n                Edung\n                <ion-icon color="white" name="ios-contact-outline" item-left></ion-icon>   \n            </ion-item>\n  \n            <ion-item detail-push (click)="showBox(1)">\n                Divinefavour \n                <ion-icon color="white" name="ios-contact-outline" item-left></ion-icon>   \n            </ion-item>\n  \n            <ion-item detail-push (click)="showBox(2)">\n                lawrenedickson49@gmail.com \n                <ion-icon color="white" name="ios-mail-outline" item-left></ion-icon>   \n            </ion-item>\n  \n  \n  \n  \n  \n            <ion-item-divider>\n                Change Password\n                <ion-icon color="white" name="ios-create-outline" \n                item-right></ion-icon>   \n            </ion-item-divider>\n  \n            <ion-item detail-push (click)="showBox(3)">\n                New Password\n                <ion-icon color="white" name="ios-lock-outline" item-left></ion-icon>   \n            </ion-item>\n  \n            <ion-item detail-push (click)="showBox(4)">\n                Confirm Password \n                <ion-icon color="white" name="ios-lock-outline" item-left></ion-icon>   \n            </ion-item>\n  \n  \n            <ion-item-divider>\n                Connected Accounts\n                <ion-icon color="white" name="ios-create-outline" \n                item-right></ion-icon>   \n            </ion-item-divider>\n  \n      </ion-list>\n    </div> -->\n  \n    \n  </ion-content>\n  '/*ion-inline-end:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/detailsfreelancer/detailsfreelancer.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]])
     ], DetailsfreelancerPage);
     return DetailsfreelancerPage;
 }());
@@ -1515,13 +1654,13 @@ var DetailsfreelancerPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 361:
+/***/ 362:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PostjobPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1573,7 +1712,7 @@ var PostjobPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-postjob',template:/*ion-inline-start:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/postjob/postjob.html"*/'<ion-header>\n  <ion-navbar color="light">\n    <ion-buttons start>\n      <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    </ion-buttons>\n\n    <ion-title>Post Job</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content class="maincontent">\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n            <ion-card>\n                <p style="margin-top: 20px" align="center"><ion-icon name="ios-clock-outline"></ion-icon></p>\n                <p style="margin-top: 5px"  align="center">Short term or part time work</p>\n                <p style="margin-top: 5px" align="center">Less than 30 hrs/week</p>\n                <p style="margin-bottom: 20px; margin-top: 5px" align="center">Less than 3 months</p>\n            </ion-card>\n        </ion-col>\n\n        <ion-col>\n            <ion-card>\n                <p style="margin-top: 20px" align="center"><ion-icon name="ios-calendar-outline"></ion-icon></p>\n                <p style="margin-top: 5px"  align="center">Dedicated Long term work</p>\n                <p style="margin-top: 5px" align="center">More than 30 hrs/week</p>\n                <p style="margin-bottom: 20px; margin-top: 5px" align="center">3+ months</p>\n            </ion-card>\n        </ion-col>\n      </ion-row>\n\n      <br>\n      <b style="margin-left: 11px; margin-bottom: 7px; ">Enter the title of your job post here</b>\n      <ion-row class="itemclass">\n          <ion-input\n            placeholder="Enter Job Description Here" required></ion-input>  \n      </ion-row>\n\n\n      <br>\n      <b style="margin-left: 11px; margin-bottom: 1px; ">\n        Job Category</b>\n      \n      <ion-card>\n            <ion-item>\n                    <ion-label style="opacity: 0.7; margin: 10px">Select Job Category </ion-label>\n                    <ion-select>\n                      <ion-option>Function QA</ion-option>\n                      <ion-option>Translation</ion-option>\n                      <ion-option>Writing</ion-option>\n                      <ion-option>IT & Networking</ion-option>\n                      <ion-option>Accounting & Consulting</ion-option>\n                      <ion-option>Data Science & Analytics</ion-option>\n                      <ion-option>Legal</ion-option>\n                      <ion-option>Sales & Marketing</ion-option>\n                      <ion-option>Web, Mobile & Software Dev</ion-option>\n                      <ion-option>Engineering & Architecture</ion-option>\n                      <ion-option>Admin Support</ion-option>\n                      <ion-option>Design & Creative</ion-option>\n                      <ion-option>Customer Service</ion-option>\n                      \n                    </ion-select>\n            </ion-item>\n         \n      </ion-card>\n\n\n\n       <!-- <ion-auto-complete [dataProvider]="CompletetestProvider"></ion-auto-complete>-->\n\n\n    <br>\n      <b style="margin-left: 13px; margin-bottom: 7px; ">\nAdd skill tags</b>\n\n    <div class="autocomplete">\n      <ion-item>\n        <ion-input  type="text" \n                    placeholder="Search skill tags here"\n                    [(ngModel)]="input"\n                    (ionChange)="search()"\n                    (ionBlur)="removeFocus()"\n                    debounce=500></ion-input>\n      </ion-item>\n      <ion-list>\n        <ion-item *ngFor="let country of countries" (click)="add(country)">\n          {{country}}\n        </ion-item>\n      </ion-list>\n</div>\n\n<div class="skillsdiv">\n  <ion-grid>\n    <ion-row *ngFor="let row of grid">\n      <ion-col width-50 *ngFor="let skill of row">\n        {{skill}}\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</div>\n\n\n\n      <br>\n      <b style="margin-left: 11px; margin-bottom: 7px; ">Enter job description here</b>\n      <ion-row class="item2class">\n          <ion-input\n            placeholder="Enter Job Description Here" required></ion-input>  \n      </ion-row>\n\n\n      <br>\n      <b style="margin-left: 11px; margin-bottom: 1px; ">Additional project files</b>\n      <ion-card>\n          <ion-item>\n              <ion-icon name="add" item-left></ion-icon>\n                <div>Upload</div>                \n          </ion-item>\n      </ion-card>\n\n      <br>\n    <button ion-button color="testone" style="margin-left: 50px; margin-right: 50px">\n        Post Job\n    </button>    \n    <br>  \n\n    </ion-grid>  \n</ion-content>\n'/*ion-inline-end:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/postjob/postjob.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Keyboard */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Keyboard */]])
     ], PostjobPage);
     return PostjobPage;
 }());
@@ -1582,13 +1721,13 @@ var PostjobPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 362:
+/***/ 363:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfileclientPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1664,9 +1803,9 @@ var ProfileclientPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-profileclient',template:/*ion-inline-start:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/profileclient/profileclient.html"*/'<ion-header>\n  <ion-navbar ion-fixed align-title="center"  color="light">\n      <button ion-button left menuToggle>\n            <ion-icon class="icon ion-home custom-icon" name="menu"></ion-icon>\n      </button>\n\n      <ion-title>  \n        My Profile\n      </ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content>\n\n  <div class="topdiv" >\n\n    <div style="width: 100%; height: 7vh;"></div>\n\n    <div class="user-photo">\n      <img src="../../assets/one.jpg">\n    </div>\n\n  </div>\n\n  <div>\n    <ion-list>\n      \n          <ion-item-divider>\n              Account Info \n              <ion-icon color="white" name="ios-create-outline" \n              \n              item-right></ion-icon>   \n          </ion-item-divider>\n\n          <ion-item detail-push (click)="showBox(0)">\n              Edung\n              <ion-icon color="white" name="ios-contact-outline" item-left></ion-icon>   \n          </ion-item>\n\n          <ion-item detail-push (click)="showBox(1)">\n              Divinefavour \n              <ion-icon color="white" name="ios-contact-outline" item-left></ion-icon>   \n          </ion-item>\n\n          <ion-item detail-push (click)="showBox(2)">\n              lawrenedickson49@gmail.com \n              <ion-icon color="white" name="ios-mail-outline" item-left></ion-icon>   \n          </ion-item>\n\n\n\n\n\n          <ion-item-divider>\n              Change Password\n              <ion-icon color="white" name="ios-create-outline" \n              item-right></ion-icon>   \n          </ion-item-divider>\n\n          <ion-item detail-push (click)="showBox(3)">\n              New Password\n              <ion-icon color="white" name="ios-lock-outline" item-left></ion-icon>   \n          </ion-item>\n\n          <ion-item detail-push (click)="showBox(4)">\n              Confirm Password \n              <ion-icon color="white" name="ios-lock-outline" item-left></ion-icon>   \n          </ion-item>\n\n\n          <ion-item-divider>\n              Connected Accounts\n              <ion-icon color="white" name="ios-create-outline" \n              item-right></ion-icon>   \n          </ion-item-divider>\n\n    </ion-list>\n  </div>\n\n  \n</ion-content>\n'/*ion-inline-end:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/profileclient/profileclient.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]])
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]])
     ], ProfileclientPage);
     return ProfileclientPage;
 }());
@@ -1675,13 +1814,13 @@ var ProfileclientPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 368:
+/***/ 369:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(369);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(477);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(370);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(478);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -1689,50 +1828,51 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 477:
+/***/ 478:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(518);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(325);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_splash_screen__ = __webpack_require__(327);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(519);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(327);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_splash_screen__ = __webpack_require__(329);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_chats_chats__ = __webpack_require__(196);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common_http__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2__ = __webpack_require__(613);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2__ = __webpack_require__(614);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_angularfire2__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2_auth__ = __webpack_require__(335);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2_auth__ = __webpack_require__(337);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2_auth___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_angularfire2_auth__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_firebase__ = __webpack_require__(614);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_firebase__ = __webpack_require__(615);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_firebase__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_linkedin_ngx__ = __webpack_require__(356);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_linkedin_ngx__ = __webpack_require__(358);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_storage__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_emoji__ = __webpack_require__(621);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_chatdetails_chatdetails__ = __webpack_require__(330);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_login_login__ = __webpack_require__(328);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_tabsclient_tabsclient__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_emoji__ = __webpack_require__(622);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_chatdetails_chatdetails__ = __webpack_require__(332);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_login_login__ = __webpack_require__(330);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_tabsclient_tabsclient__ = __webpack_require__(213);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_tabsfreelancer_tabsfreelancer__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_jobs_jobs__ = __webpack_require__(332);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_postjob_postjob__ = __webpack_require__(361);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_shortlisted_shortlisted__ = __webpack_require__(358);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_freelancers_freelancers__ = __webpack_require__(359);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__angular_platform_browser_animations__ = __webpack_require__(622);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_profilefreelancer_profilefreelancer__ = __webpack_require__(334);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_profileclient_profileclient__ = __webpack_require__(362);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_ionic2_auto_complete__ = __webpack_require__(624);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_jobs_jobs__ = __webpack_require__(334);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_postjob_postjob__ = __webpack_require__(362);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_shortlisted_shortlisted__ = __webpack_require__(359);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_freelancers_freelancers__ = __webpack_require__(360);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__angular_platform_browser_animations__ = __webpack_require__(623);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_profilefreelancer_profilefreelancer__ = __webpack_require__(336);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_profileclient_profileclient__ = __webpack_require__(363);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_ionic2_auto_complete__ = __webpack_require__(625);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__angular_forms__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__providers_completetest_completetest__ = __webpack_require__(631);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_joblist_joblist__ = __webpack_require__(635);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__providers_chat_service__ = __webpack_require__(331);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_detailsfreelancer_detailsfreelancer__ = __webpack_require__(360);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__providers_completetest_completetest__ = __webpack_require__(632);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_joblist_joblist__ = __webpack_require__(636);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__providers_chat_service__ = __webpack_require__(333);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_detailsfreelancer_detailsfreelancer__ = __webpack_require__(361);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__providers_auth_auth__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_register_register__ = __webpack_require__(353);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__providers_countriesapi_countriesapi__ = __webpack_require__(355);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_setupprofile_setupprofile__ = __webpack_require__(354);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__ionic_native_geolocation_ngx__ = __webpack_require__(333);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_register_register__ = __webpack_require__(355);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__providers_countriesapi_countriesapi__ = __webpack_require__(356);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_setupprofile_setupprofile__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__ionic_native_geolocation_ngx__ = __webpack_require__(335);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_modal_modal__ = __webpack_require__(357);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1748,6 +1888,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 // import { Chat } from '../pages/chat/chat';
+
 
 
 
@@ -1802,6 +1943,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_18__pages_jobs_jobs__["a" /* JobsPage */],
                 __WEBPACK_IMPORTED_MODULE_20__pages_shortlisted_shortlisted__["a" /* ShortlistedPage */],
                 __WEBPACK_IMPORTED_MODULE_30__pages_detailsfreelancer_detailsfreelancer__["a" /* DetailsfreelancerPage */],
+                __WEBPACK_IMPORTED_MODULE_36__pages_modal_modal__["a" /* ModalPage */],
                 __WEBPACK_IMPORTED_MODULE_16__pages_tabsclient_tabsclient__["a" /* TabsclientPage */],
                 __WEBPACK_IMPORTED_MODULE_23__pages_profilefreelancer_profilefreelancer__["a" /* ProfilefreelancerPage */],
                 __WEBPACK_IMPORTED_MODULE_34__pages_setupprofile_setupprofile__["a" /* SetupprofilePage */],
@@ -1846,6 +1988,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_19__pages_postjob_postjob__["a" /* PostjobPage */],
                 __WEBPACK_IMPORTED_MODULE_15__pages_login_login__["a" /* LoginPage */],
                 __WEBPACK_IMPORTED_MODULE_6__pages_chats_chats__["a" /* ChatsPage */],
+                __WEBPACK_IMPORTED_MODULE_36__pages_modal_modal__["a" /* ModalPage */],
                 __WEBPACK_IMPORTED_MODULE_16__pages_tabsclient_tabsclient__["a" /* TabsclientPage */],
                 __WEBPACK_IMPORTED_MODULE_17__pages_tabsfreelancer_tabsfreelancer__["a" /* TabsfreelancerPage */],
             ],
@@ -1874,20 +2017,21 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 518:
+/***/ 519:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(325);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(327);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(328);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabsclient_tabsclient__ = __webpack_require__(357);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_postjob_postjob__ = __webpack_require__(361);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_profileclient_profileclient__ = __webpack_require__(362);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(327);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(329);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(330);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabsclient_tabsclient__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_postjob_postjob__ = __webpack_require__(362);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_profileclient_profileclient__ = __webpack_require__(363);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_storage__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_setupprofile_setupprofile__ = __webpack_require__(212);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1906,6 +2050,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var MyApp = /** @class */ (function () {
     function MyApp(platform, storage, events, statusBar, splashScreen) {
         this.platform = platform;
@@ -1914,7 +2059,7 @@ var MyApp = /** @class */ (function () {
         this.statusBar = statusBar;
         this.splashScreen = splashScreen;
         this.initializeApp();
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_login_login__["a" /* LoginPage */];
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_9__pages_setupprofile_setupprofile__["a" /* SetupprofilePage */];
         // this.storage.get("type").then((res) =>{
         //   console.log(res);
         //   if(res == null){
@@ -1973,13 +2118,13 @@ var MyApp = /** @class */ (function () {
         this.nav.setRoot(page.component);
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Nav */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Nav */])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Nav */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/app/app.html"*/'<ion-menu persistent="true" [content]="content" type="overlay">\n  <ion-header no-border>\n    <ion-toolbar>\n              <div class="container">\n                  <img class="userimage" src="../../assets/one.jpg">\n                  <b class="user-name">Edung Divinefavour</b>\n                  <div class="user-mail">lawrenedickson49@gmail.com</div>\n                  <br>\n                  <br>\n                 \n              </div>\n\n    </ion-toolbar>\n  </ion-header>\n  \n  <ion-content>\n\n      <ion-list>\n        <button ion-item menuClose *ngFor="let p of pages" (click)="openPage(p)">\n            <ion-icon item-start [name]="p.icon"></ion-icon>\n            <!-- <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon> -->\n            {{ p.title }}\n          </button>\n      </ion-list>\n\n<!-- \n            <ion-list>\n        <button ion-item menuClose *ngFor="let p of pages" (click)="openPage(p)">\n            <ion-icon item-start [name]="p.icon"></ion-icon>\n            {{ p.title }}\n          </button>\n      </ion-list> -->\n    </ion-content>\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_8__ionic_storage__["b" /* Storage */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */],
             __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
@@ -1991,7 +2136,7 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 621:
+/***/ 622:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2025,14 +2170,14 @@ var EmojiProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 631:
+/***/ 632:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CompletetestProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__(632);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__(633);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(633);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(634);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2075,13 +2220,13 @@ var CompletetestProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 635:
+/***/ 636:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return JoblistPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2105,7 +2250,7 @@ var JoblistPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-joblist',template:/*ion-inline-start:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/joblist/joblist.html"*/'<ion-header>\n    <ion-navbar color="light">\n      <ion-buttons start>\n        <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      </ion-buttons>\n  \n     \n    <ion-buttons end>\n        <button ion-button icon-only (click)="openSecondModal()">\n            <ion-icon  class="icon ion-home custom-icon" name="ios-search"></ion-icon>\n        </button>\n    </ion-buttons>\n      <ion-title>Find Jobs</ion-title>\n    </ion-navbar>\n  </ion-header>\n\n<ion-content>\n  <ion-list>\n    <ion-item>\n      <div style="margin-top: 10px">\n          <h2 style="color: #287AB0">Developer needed for creating site</h2>\n          <ion-icon style="position: absolute; z-index: 5;\n          top: 20px;\n           right: 20px;" name="ios-heart-outline"></ion-icon>\n      </div>\n      \n      <br>\n      <div><b>Hourly</b> - Just now</div>\n      <br>\n      <div>\n          <p>Skill Level</p>\n          <p>Intermediate</p>\n          <p style="position: absolute; z-index: 5;\n          bottom: 20px;\n           right: 20px;">3/5(19)</p>\n      </div>\n      \n      <div></div>\n    </ion-item>\n\n    <ion-item>\n        <div style="margin-top: 10px">\n            <h2 style="color: #287AB0">Developer needed for creating site</h2>\n            <ion-icon style="position: absolute; z-index: 5;\n            top: 20px;\n             right: 20px;" name="ios-heart-outline"></ion-icon>\n        </div>\n        \n        <br>\n        <div><b>Hourly</b> - 5minutes ago</div>\n        <br>\n        <div>\n            <p>Skill Level</p>\n            <p>Intermediate</p>\n            <p style="position: absolute; z-index: 5;\n            bottom: 20px;\n             right: 20px;">3/5(19)</p>\n        </div>\n        \n        <div></div>\n      </ion-item>\n\n      <ion-item>\n          <div style="margin-top: 10px">\n              <h2 style="color: #287AB0">Developer needed for creating site</h2>\n              <ion-icon style="position: absolute; z-index: 5;\n              top: 20px;\n               right: 20px;" name="ios-heart-outline"></ion-icon>\n          </div>\n          \n          <br>\n          <div><b>Hourly</b> - 19minutes ago</div>\n          <br>\n          <div>\n              <p>Skill Level</p>\n              <p>Intermediate</p>\n              <p style="position: absolute; z-index: 5;\n              bottom: 20px;\n               right: 20px;">3/5(19)</p>\n          </div>\n          \n          <div></div>\n        </ion-item>\n\n        <ion-item>\n            <div style="margin-top: 10px">\n                <h2 style="color: #287AB0">Developer needed for creating site</h2>\n                <ion-icon style="position: absolute; z-index: 5;\n                top: 20px;\n                 right: 20px;" name="ios-heart-outline"></ion-icon>\n            </div>\n            \n            <br>\n            <div><b>Hourly</b> - 19minutes ago</div>\n            <br>\n            <div>\n                <p>Skill Level</p>\n                <p>Intermediate</p>\n                <p style="position: absolute; z-index: 5;\n                bottom: 20px;\n                 right: 20px;">3/5(19)</p>\n            </div>\n            \n            <div></div>\n          </ion-item>\n\n          <ion-item>\n              <div style="margin-top: 10px">\n                  <h2 style="color: #287AB0">Developer needed for creating site</h2>\n                  <ion-icon style="position: absolute; z-index: 5;\n                  top: 20px;\n                   right: 20px;" name="ios-heart-outline"></ion-icon>\n              </div>\n              \n              <br>\n              <div><b>Hourly</b> - 19minutes ago</div>\n              <br>\n              <div>\n                  <p>Skill Level</p>\n                  <p>Intermediate</p>\n                  <p style="position: absolute; z-index: 5;\n                  bottom: 20px;\n                   right: 20px;">3/5(19)</p>\n              </div>\n              \n              <div></div>\n            </ion-item>\n\n            <ion-item>\n                <div style="margin-top: 10px">\n                    <h2 style="color: #287AB0">Developer needed for creating site</h2>\n                    <ion-icon style="position: absolute; z-index: 5;\n                    top: 20px;\n                     right: 20px;" name="ios-heart-outline"></ion-icon>\n                </div>\n                \n                <br>\n                <div><b>Hourly</b> - 19minutes ago</div>\n                <br>\n                <div>\n                    <p>Skill Level</p>\n                    <p>Intermediate</p>\n                    <p style="position: absolute; z-index: 5;\n                    bottom: 20px;\n                     right: 20px;">3/5(19)</p>\n                </div>\n                \n                <div></div>\n              </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/joblist/joblist.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]])
     ], JoblistPage);
     return JoblistPage;
 }());
@@ -2114,5 +2259,5 @@ var JoblistPage = /** @class */ (function () {
 
 /***/ })
 
-},[368]);
+},[369]);
 //# sourceMappingURL=main.js.map

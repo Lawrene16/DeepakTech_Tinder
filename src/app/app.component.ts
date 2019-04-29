@@ -37,7 +37,7 @@ export class MyApp {
     public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
-    this.rootPage = LoginPage;
+    this.rootPage = SetupprofilePage;
     // this.storage.get("type").then((res) =>{
     //   console.log(res);
     //   if(res == null){

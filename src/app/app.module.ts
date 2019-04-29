@@ -38,6 +38,7 @@ import { CountriesapiProvider } from '../providers/countriesapi/countriesapi';
 import { SetupprofilePage } from '../pages/setupprofile/setupprofile';
 import { Http } from '@angular/http';
 import { Geolocation } from '@ionic-native/geolocation/ngx'
+import { ModalPage } from '../pages/modal/modal';
 
 
 var firebaseconfig = {
@@ -67,6 +68,7 @@ firebase.initializeApp(firebaseconfig);
     JobsPage,
     ShortlistedPage,
     DetailsfreelancerPage,    
+    ModalPage,
     TabsclientPage,
     ProfilefreelancerPage,
     SetupprofilePage,
@@ -107,6 +109,7 @@ firebase.initializeApp(firebaseconfig);
     PostjobPage,    
     LoginPage,
     ChatsPage,    
+    ModalPage,
     TabsclientPage,
     TabsfreelancerPage,
     // Chat,    

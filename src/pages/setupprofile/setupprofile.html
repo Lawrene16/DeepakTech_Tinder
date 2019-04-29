@@ -17,7 +17,7 @@
     </p>
   
     <div (click)="showBox(0)">
-        <h4 align="center">Edung Divinefavour
+        <h4 align="center">{{fullname}}
             <ion-icon item-right name="ios-create-outline"></ion-icon></h4>
     </div>
 
@@ -29,7 +29,7 @@
     </div>
 
     <div (click)="showBox(1)">
-        <p align="center">Hourly Rate - $12.5/hr
+        <p align="center">Hourly Rate - ${{hourlyrate}}/hr
             <ion-icon item-right name="ios-create-outline"></ion-icon>
           </p>
     </div>
@@ -47,7 +47,8 @@
                                 [(ngModel)]="input"
                                 (ionChange)="search()"
                                 (ionBlur)="removeFocus()"
-                                debounce=500></ion-input>
+                                debounce=500>
+                              </ion-input>
                   </ion-item>
                   <ion-list>
                     <ion-item *ngFor="let country of countries" (click)="add(country, i)">
@@ -59,16 +60,19 @@
         <ion-list-header (click)="showBox(2)">My Experiences
             <ion-icon item-right name="ios-create-outline"></ion-icon>
         </ion-list-header>
+
+        <p [hidden]="shouldhidetext" style="margin-left: 20px">No Experiences Added Yet, Click the icon above to add experiences</p>
   
-        <ion-item>
+        <ion-item *ngFor="let experience of experienceslist; let i= index">
           <ion-avatar item-left>
             <img src="../../assets/upwork.png">
           </ion-avatar>
-          <b>UI Designer</b><br>
-          Upwork
-          <ion-icon name="ios-remove-circle-outline" item-right></ion-icon>
+          <b>{{experience.role}}</b><br>
+          {{experience.company}}
+          <ion-icon 
+          name="ios-remove-circle-outline" (click)="removeExperience(experience, i)" item-right></ion-icon>
         </ion-item>
-  
+<!--   
         <ion-item>
             <ion-avatar item-left>
               <img src="../../assets/upwork.png">
@@ -77,17 +81,23 @@
             Upwork
           <ion-icon name="ios-remove-circle-outline" item-right></ion-icon>
           </ion-item>
-  
+   -->
+
+
+
+
+
+
+
           <br>
           <ion-list-header (click)="showBox(3)">About Me
             <ion-icon item-right name="ios-create-outline"></ion-icon>
           </ion-list-header>
+
+        <p [hidden]="shouldhidetexttwo" style="margin-left: 20px">Click the button above to tell the Tech-Tinder community about yourself</p>
+
           <div id="writeup" style="margin: 15px; font-size: 16px">
-              I am an Expert Cross platform Mobile Developer with over 4 years experience building mobile apps with Java, Kotlin, Swift, Objective-C, Ionic and Flutter. 
-        
-              I build/maintain/debug mobile apps as a hobby, therefore, I have expert knowledge on a lot of areas and tools that extend the Android and iOS framework to whatever is to be achieved.
-  
-              I look forward to working with you
+             {{writeup}}
           </div>
       </ion-list>
 
