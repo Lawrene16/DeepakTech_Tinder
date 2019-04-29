@@ -46,7 +46,7 @@ export class SetupprofilePage {
     experienceslist = [];
     shouldhidetext = false;
     shouldhidetexttwo = false;
-
+    skillsstring:string;
 
   constructor(public navCtrl: NavController,
     public modalCtrl: ModalController,
@@ -62,14 +62,16 @@ export class SetupprofilePage {
   }
 
   add(item: string, i) {
+
     this.isshidden = false;
     // this.input = item;
     var currentskills = document.getElementById("currentskills");
 
     // if(this.skillstobeuploaded.length == 0){
-      currentskills.innerHTML = item + " | " + currentskills.innerHTML;
+      this.skillsstring = item + " | " + currentskills.innerHTML;
+      currentskills.innerHTML = this.skillsstring;
     
-      console.log(item, i);
+      // console.log(item, i);
       this.skillstobeuploaded.push(item);
     // }
     // else{
@@ -90,6 +92,7 @@ export class SetupprofilePage {
 
 
     this.countries = [];
+    this.input = "";
   }
 
   removeFocus() {
@@ -128,18 +131,20 @@ export class SetupprofilePage {
       // callback: this.myCallbackFunction
       // });
 
-      // this.navCtrl.push(ModalPage,
-      //   {
-      //       // data: this.data,
-      //       callback: this.getData
-      //   });
+      this.navCtrl.push(ModalPage,
+        {
+            // data: this.data,
+            callback: this.getData
+        });
   }
 
       getData = data =>
     {
       return new Promise((resolve, reject) => {
         resolve();
-        console.log(resolve)
+        console.log(data);
+        this.writeup = data;
+        this.shouldhidetexttwo = true;
       });
     };
 
@@ -261,6 +266,21 @@ export class SetupprofilePage {
     if(this.experienceslist.length == 0){
       this.shouldhidetext = false;
     }
+  }
+
+  revert(){
+    // console.log(this.skillstobeuploaded.length);
+    console.log(this.skillstobeuploaded[this.skillstobeuploaded.length-1]);
+    this.skillsstring = this.skillsstring.replace(this.skillstobeuploaded[this.skillstobeuploaded.length-1] + " | ", "");
+
+    this.skillstobeuploaded.splice(this.skillstobeuploaded.length - 1);
+    var currentskills = document.getElementById("currentskills");
+    currentskills.innerHTML = this.skillsstring;    
+  
+    if(this.skillstobeuploaded.length == 0){
+        this.isshidden = true;
+    }
+
   }
 
   saveprofile(){

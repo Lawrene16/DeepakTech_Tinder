@@ -39,6 +39,7 @@ import { SetupprofilePage } from '../pages/setupprofile/setupprofile';
 import { Http } from '@angular/http';
 import { Geolocation } from '@ionic-native/geolocation/ngx'
 import { ModalPage } from '../pages/modal/modal';
+import { WriteupPage } from '../pages/writeup/writeup';
 
 
 var firebaseconfig = {
@@ -73,6 +74,7 @@ firebase.initializeApp(firebaseconfig);
     ProfilefreelancerPage,
     SetupprofilePage,
     ProfileclientPage,
+    WriteupPage,
     FreelancersPage,
     TabsfreelancerPage,
     PostjobPage,
@@ -100,6 +102,7 @@ firebase.initializeApp(firebaseconfig);
     ShortlistedPage,
     FreelancersPage,
     ProfilefreelancerPage,
+    WriteupPage,
     RegisterPage,
     ProfileclientPage,
     SetupprofilePage,

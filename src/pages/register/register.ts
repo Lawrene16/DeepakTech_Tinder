@@ -99,6 +99,7 @@ export class RegisterPage {
     }
   }
 
+
   presentToast(message){
     let toast = this.toastCtrl.create({
       message: message,

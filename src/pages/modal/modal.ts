@@ -1,5 +1,6 @@
 import { Component, ElementRef } from '@angular/core';
 import { IonicPage, NavController, ViewController, NavParams } from 'ionic-angular';
+import { RegisterPage } from '../register/register';
 
 
 @Component({
@@ -8,7 +9,7 @@ import { IonicPage, NavController, ViewController, NavParams } from 'ionic-angul
 })
 export class ModalPage {
 
-  writeup = "dffdf";
+  writeup = "";
   callback;
   constructor(public navCtrl: NavController, 
     public view: ViewController,
@@ -25,9 +26,13 @@ export class ModalPage {
   goPrevious(){
  
     this.callback(this.writeup).then( () => {
-       this.navCtrl.pop() 
+       this.navCtrl.pop() ;
       });
 
+  }
+
+  doit(){
+    this.navCtrl.push(RegisterPage);
   }
 
   

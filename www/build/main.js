@@ -162,6 +162,7 @@ var AuthProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase_app__ = __webpack_require__(198);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase_app__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tabsfreelancer_tabsfreelancer__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modal_modal__ = __webpack_require__(636);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -178,6 +179,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the SetupprofilePage page.
  *
@@ -186,6 +188,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  */
 var SetupprofilePage = /** @class */ (function () {
     function SetupprofilePage(navCtrl, modalCtrl, keyboard, loadingCtrl, toastCtrl, countriesApi, alertCtrl, navParams) {
+        var _this = this;
         this.navCtrl = navCtrl;
         this.modalCtrl = modalCtrl;
         this.keyboard = keyboard;
@@ -218,7 +221,9 @@ var SetupprofilePage = /** @class */ (function () {
         this.getData = function (data) {
             return new Promise(function (resolve, reject) {
                 resolve();
-                console.log(resolve);
+                console.log(data);
+                _this.writeup = data;
+                _this.shouldhidetexttwo = true;
             });
         };
         this.fullname = this.navParams.get('fullname');
@@ -229,8 +234,9 @@ var SetupprofilePage = /** @class */ (function () {
         // this.input = item;
         var currentskills = document.getElementById("currentskills");
         // if(this.skillstobeuploaded.length == 0){
-        currentskills.innerHTML = item + " | " + currentskills.innerHTML;
-        console.log(item, i);
+        this.skillsstring = item + " | " + currentskills.innerHTML;
+        currentskills.innerHTML = this.skillsstring;
+        // console.log(item, i);
         this.skillstobeuploaded.push(item);
         // }
         // else{
@@ -247,6 +253,7 @@ var SetupprofilePage = /** @class */ (function () {
         //   });
         // }
         this.countries = [];
+        this.input = "";
     };
     SetupprofilePage.prototype.removeFocus = function () {
         this.keyboard.close();
@@ -277,11 +284,10 @@ var SetupprofilePage = /** @class */ (function () {
         // this.navCtrl.push(ModalPage, {
         // callback: this.myCallbackFunction
         // });
-        // this.navCtrl.push(ModalPage,
-        //   {
-        //       // data: this.data,
-        //       callback: this.getData
-        //   });
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__modal_modal__["a" /* ModalPage */], {
+            // data: this.data,
+            callback: this.getData
+        });
     };
     SetupprofilePage.prototype.presentToast = function (message) {
         var toast = this.toastCtrl.create({
@@ -390,6 +396,17 @@ var SetupprofilePage = /** @class */ (function () {
             this.shouldhidetext = false;
         }
     };
+    SetupprofilePage.prototype.revert = function () {
+        // console.log(this.skillstobeuploaded.length);
+        console.log(this.skillstobeuploaded[this.skillstobeuploaded.length - 1]);
+        this.skillsstring = this.skillsstring.replace(this.skillstobeuploaded[this.skillstobeuploaded.length - 1] + " | ", "");
+        this.skillstobeuploaded.splice(this.skillstobeuploaded.length - 1);
+        var currentskills = document.getElementById("currentskills");
+        currentskills.innerHTML = this.skillsstring;
+        if (this.skillstobeuploaded.length == 0) {
+            this.isshidden = true;
+        }
+    };
     SetupprofilePage.prototype.saveprofile = function () {
         var _this = this;
         var load = this.loadingCtrl.create({
@@ -411,7 +428,7 @@ var SetupprofilePage = /** @class */ (function () {
     };
     SetupprofilePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-setupprofile',template:/*ion-inline-start:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/setupprofile/setupprofile.html"*/'<ion-header>\n    <ion-navbar ion-fixed align-title="center"  color="light">\n        <ion-title color="primary">  \n          Setup Your Profile\n        </ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  \n  <ion-content padding>\n  \n    <p align="center">\n      <!-- <div class="user-photo"> -->\n        <img class="user-photo"\n         src="../../assets/one.jpg">\n      <!-- </div> -->\n    </p>\n  \n    <div (click)="showBox(0)">\n        <h4 align="center">{{fullname}}\n            <ion-icon item-right name="ios-create-outline"></ion-icon></h4>\n    </div>\n\n    <div [hidden]="isshidden" (click)="revert()">\n        <p style="margin-left: 30px;margin-right:30px" id="currentskills" align="center">\n            <ion-icon item-right name="ios-create-outline"></ion-icon>\n          </p>\n\n    </div>\n\n    <div (click)="showBox(1)">\n        <p align="center">Hourly Rate - ${{hourlyrate}}/hr\n            <ion-icon item-right name="ios-create-outline"></ion-icon>\n          </p>\n    </div>\n \n    <br>\n      <ion-list>\n\n          <ion-list-header>Skills\n          </ion-list-header>\n\n              <div class="autocomplete">\n                  <ion-item>\n                    <ion-input  type="text" \n                                placeholder="Search skill tags here"\n                                [(ngModel)]="input"\n                                (ionChange)="search()"\n                                (ionBlur)="removeFocus()"\n                                debounce=500>\n                              </ion-input>\n                  </ion-item>\n                  <ion-list>\n                    <ion-item *ngFor="let country of countries" (click)="add(country, i)">\n                      {{country}}\n                    </ion-item>\n                  </ion-list>\n            </div>\n\n        <ion-list-header (click)="showBox(2)">My Experiences\n            <ion-icon item-right name="ios-create-outline"></ion-icon>\n        </ion-list-header>\n\n        <p [hidden]="shouldhidetext" style="margin-left: 20px">No Experiences Added Yet, Click the icon above to add experiences</p>\n  \n        <ion-item *ngFor="let experience of experienceslist; let i= index">\n          <ion-avatar item-left>\n            <img src="../../assets/upwork.png">\n          </ion-avatar>\n          <b>{{experience.role}}</b><br>\n          {{experience.company}}\n          <ion-icon \n          name="ios-remove-circle-outline" (click)="removeExperience(experience, i)" item-right></ion-icon>\n        </ion-item>\n<!--   \n        <ion-item>\n            <ion-avatar item-left>\n              <img src="../../assets/upwork.png">\n            </ion-avatar>\n            <b>Android Developer</b><br>\n            Upwork\n          <ion-icon name="ios-remove-circle-outline" item-right></ion-icon>\n          </ion-item>\n   -->\n\n\n\n\n\n\n\n          <br>\n          <ion-list-header (click)="showBox(3)">About Me\n            <ion-icon item-right name="ios-create-outline"></ion-icon>\n          </ion-list-header>\n\n        <p [hidden]="shouldhidetexttwo" style="margin-left: 20px">Click the button above to tell the Tech-Tinder community about yourself</p>\n\n          <div id="writeup" style="margin: 15px; font-size: 16px">\n             {{writeup}}\n          </div>\n      </ion-list>\n\n      <p align="center">\n          <button ion-button outline (click)="saveprofile()" class="bsuccess">SAVE PROFILE</button>\n      </p>\n  </ion-content>\n  '/*ion-inline-end:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/setupprofile/setupprofile.html"*/,
+            selector: 'page-setupprofile',template:/*ion-inline-start:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/setupprofile/setupprofile.html"*/'<ion-header>\n    <ion-navbar ion-fixed align-title="center"  color="light">\n        <ion-title color="primary">  \n          Setup Your Profile\n        </ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  \n  <ion-content padding>\n  \n    <p align="center">\n      <!-- <div class="user-photo"> -->\n        <img class="user-photo"\n         src="../../assets/one.jpg">\n      <!-- </div> -->\n    </p>\n  \n    <div (click)="showBox(0)">\n        <h4 align="center">{{fullname}}\n            <ion-icon item-right name="ios-create-outline"></ion-icon></h4>\n    </div>\n\n    <div [hidden]="isshidden" (click)="revert()">\n        <p style="margin-left: 30px;margin-right:30px" id="currentskills" align="center">\n            <ion-icon item-right name="ios-remove-circle-outline"></ion-icon>\n          </p>\n\n    </div>\n\n    <div (click)="showBox(1)">\n        <p align="center">Hourly Rate - ${{hourlyrate}}/hr\n            <ion-icon item-right name="ios-create-outline"></ion-icon>\n          </p>\n    </div>\n \n    <br>\n      <ion-list>\n\n          <ion-list-header>Skills\n          </ion-list-header>\n\n              <div class="autocomplete">\n                  <ion-item>\n                    <ion-input  type="text" \n                                placeholder="Search skill tags here"\n                                [(ngModel)]="input"\n                                (ionChange)="search()"\n                                (ionBlur)="removeFocus()"\n                                debounce=500>\n                              </ion-input>\n                  </ion-item>\n                  <ion-list>\n                    <ion-item *ngFor="let country of countries" (click)="add(country, i)">\n                      {{country}}\n                    </ion-item>\n                  </ion-list>\n            </div>\n\n        <ion-list-header (click)="showBox(2)">My Experiences\n            <ion-icon item-right name="ios-create-outline"></ion-icon>\n        </ion-list-header>\n\n        <p [hidden]="shouldhidetext" style="margin-left: 20px">No Experiences Added Yet, Click the icon above to add experiences</p>\n  \n        <ion-item *ngFor="let experience of experienceslist; let i= index">\n          <ion-avatar item-left>\n            <img src="../../assets/upwork.png">\n          </ion-avatar>\n          <b>{{experience.role}}</b><br>\n          {{experience.company}}\n          <ion-icon \n          name="ios-remove-circle-outline" (click)="removeExperience(experience, i)" item-right></ion-icon>\n        </ion-item>\n<!--   \n        <ion-item>\n            <ion-avatar item-left>\n              <img src="../../assets/upwork.png">\n            </ion-avatar>\n            <b>Android Developer</b><br>\n            Upwork\n          <ion-icon name="ios-remove-circle-outline" item-right></ion-icon>\n          </ion-item>\n   -->\n\n\n\n\n\n\n\n          <br>\n          <ion-list-header (click)="showBox(3)">About Me\n            <ion-icon item-right name="ios-create-outline"></ion-icon>\n          </ion-list-header>\n\n        <p [hidden]="shouldhidetexttwo" style="margin-left: 20px">Click the button above to tell the Tech-Tinder community about yourself</p>\n\n          <div id="writeup" style="margin: 15px; font-size: 16px">\n             {{writeup}}\n          </div>\n      </ion-list>\n\n      <p align="center">\n          <button ion-button outline (click)="saveprofile()" class="bsuccess">SAVE PROFILE</button>\n      </p>\n  </ion-content>\n  '/*ion-inline-end:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/setupprofile/setupprofile.html"*/,
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ModalController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Keyboard */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Keyboard */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ToastController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__providers_countriesapi_countriesapi__["a" /* CountriesapiProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_countriesapi_countriesapi__["a" /* CountriesapiProvider */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]) === "function" && _h || Object])
     ], SetupprofilePage);
@@ -430,8 +447,8 @@ var SetupprofilePage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsclientPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chats_chats__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shortlisted_shortlisted__ = __webpack_require__(359);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__freelancers_freelancers__ = __webpack_require__(360);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shortlisted_shortlisted__ = __webpack_require__(358);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__freelancers_freelancers__ = __webpack_require__(359);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -799,7 +816,7 @@ var ChatdetailsPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operators_map__ = __webpack_require__(528);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operators_map__ = __webpack_require__(527);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operators_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_operators_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(107);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1171,7 +1188,7 @@ var ProfilefreelancerPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__ = __webpack_require__(197);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__setupprofile_setupprofile__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_linkedin_ngx__ = __webpack_require__(358);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_linkedin_ngx__ = __webpack_require__(357);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__tabsclient_tabsclient__ = __webpack_require__(213);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1280,14 +1297,10 @@ var RegisterPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-register',template:/*ion-inline-start:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/register/register.html"*/'\n\n<ion-content class="content_bg" padding>\n\n<p align="center">\n  <img src="../../assets/icon.png" height="110">\n  <!-- <b style="font-size: 35px; color: white">ech-Tinder</b> -->\n</p>\n\n  <ion-list class="listt">  \n    \n      <ion-item class="listt">\n          <ion-label floating>Full Name</ion-label>\n          <ion-input [(ngModel)]="fullname"></ion-input>\n        </ion-item>\n\n      <ion-item class="listt">\n        <ion-label floating>E-mail or Phone</ion-label>\n        <ion-input type="email" [(ngModel)]="email"></ion-input>\n      </ion-item>\n  \n      <ion-item class="listt">\n          <ion-label floating>Password</ion-label>\n          <ion-input type="password" [(ngModel)]="password"></ion-input>\n      </ion-item>\n    </ion-list>\n\n    <h5 style="text-align: center; opacity: 0.7">I want to be a </h5>\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n            <ion-card\n            [ngStyle]="{\'background-color\': cardbackgroundr}"\n            (click)="isRecruiter()"\n             class="choosecard">\n             <h2 \n            [ngStyle]="{\'color\': cardtextr}"             \n             style="opacity: 0.8">Recruiter\n            </h2></ion-card>\n        </ion-col>\n        <ion-col>\n            <ion-card \n            [ngStyle]="{\'background-color\': cardbackgroundf}"            \n            (click)="isFreelancer()" class="choosecard">\n            <h2\n            [ngStyle]="{\'color\': cardtextf}"             \n             style="opacity: 0.8">Freelancer</h2>\n          </ion-card>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n\n    \n\n    <button ion-button (click)="signUp()" block class="btn success">JOIN NOW</button>\n\n    <!-- <p align="center"><b >Or</b></p> -->\n    <button ion-button \n    (click)="linkedinsignup()"\n    block style="border-radius: 5px;\n    margin-top: 20px;\n    margin-left: 30px;\n    width: 75vw;" \n    color="testone">\n    <ion-icon style="font-size: 30px;\n     position: absolute; left: 20px;" name="logo-linkedin"></ion-icon>                    \n     Join now with LinkedIn!\n</button>\n\n    <br>\n    <br>\n    \n    <div>\n      <!-- <b class="forgotp">F?</b> -->\n      <b class="joinn" (click)="alreadyaMember()">ALREADY A MEMBER?</b>\n    </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/register/register.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_4__ionic_native_linkedin_ngx__["a" /* LinkedIn */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__["a" /* AuthProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_native_linkedin_ngx__["a" /* LinkedIn */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_native_linkedin_ngx__["a" /* LinkedIn */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__["a" /* AuthProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__["a" /* AuthProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ToastController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]) === "function" && _f || Object])
     ], RegisterPage);
     return RegisterPage;
+    var _a, _b, _c, _d, _e, _f;
 }());
 
 //# sourceMappingURL=register.js.map
@@ -1341,56 +1354,7 @@ var CountriesapiProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 357:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var ModalPage = /** @class */ (function () {
-    function ModalPage(navCtrl, element, navParams) {
-        this.navCtrl = navCtrl;
-        this.element = element;
-        this.navParams = navParams;
-    }
-    ModalPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ModalPage');
-    };
-    ModalPage.prototype.autoSizeDescription = function () {
-        var textArea = this.element.nativeElement.getElementsByTagName('textarea')[0];
-        textArea.style.overflow = 'hidden';
-        textArea.style.height = 'auto';
-        textArea.style.height = textArea.scrollHeight + 'px';
-        return;
-    };
-    ModalPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-modal',template:/*ion-inline-start:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/modal/modal.html"*/'<!--\n  Generated template for the ModalPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="light">\n    <ion-buttons left>\n      <button navPop ion-button icon-only>\n        <ion-icon color="primary" name="arrow-back"></ion-icon>\n      </button>\n    </ion-buttons>\n\n\n    <ion-buttons right>\n      <button navPop ion-button icon-only (click)="goPrevious()">\n        <ion-icon color="primary" name="ios-checkmark-outline"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>Write about yourself</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <!-- <ion-textarea style="height: 40vh" placeholder="Write about yourself here">\n\n    </ion-textarea> -->\n\n    <ion-textarea type="text" [(ngModel)]="writeup" (input)="autoSizeDescription($event);"></ion-textarea>\n</ion-content>\n'/*ion-inline-end:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/modal/modal.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* ElementRef */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]])
-    ], ModalPage);
-    return ModalPage;
-}());
-
-//# sourceMappingURL=modal.js.map
-
-/***/ }),
-
-/***/ 359:
+/***/ 358:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1429,14 +1393,14 @@ var ShortlistedPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 360:
+/***/ 359:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FreelancersPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__detailsfreelancer_detailsfreelancer__ = __webpack_require__(361);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__detailsfreelancer_detailsfreelancer__ = __webpack_require__(360);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1609,7 +1573,7 @@ var FreelancersPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 361:
+/***/ 360:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1654,7 +1618,7 @@ var DetailsfreelancerPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 362:
+/***/ 361:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1721,7 +1685,7 @@ var PostjobPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 363:
+/***/ 362:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1814,13 +1778,13 @@ var ProfileclientPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 369:
+/***/ 368:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(370);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(478);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(369);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(477);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -1828,7 +1792,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 478:
+/***/ 477:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1836,43 +1800,44 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(519);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(518);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(327);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_splash_screen__ = __webpack_require__(329);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_chats_chats__ = __webpack_require__(196);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common_http__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2__ = __webpack_require__(614);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2__ = __webpack_require__(613);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_angularfire2__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2_auth__ = __webpack_require__(337);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2_auth___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_angularfire2_auth__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_firebase__ = __webpack_require__(615);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_firebase__ = __webpack_require__(614);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_firebase__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_linkedin_ngx__ = __webpack_require__(358);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_linkedin_ngx__ = __webpack_require__(357);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_storage__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_emoji__ = __webpack_require__(622);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_emoji__ = __webpack_require__(621);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_chatdetails_chatdetails__ = __webpack_require__(332);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_login_login__ = __webpack_require__(330);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_tabsclient_tabsclient__ = __webpack_require__(213);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_tabsfreelancer_tabsfreelancer__ = __webpack_require__(195);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_jobs_jobs__ = __webpack_require__(334);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_postjob_postjob__ = __webpack_require__(362);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_shortlisted_shortlisted__ = __webpack_require__(359);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_freelancers_freelancers__ = __webpack_require__(360);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__angular_platform_browser_animations__ = __webpack_require__(623);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_postjob_postjob__ = __webpack_require__(361);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_shortlisted_shortlisted__ = __webpack_require__(358);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_freelancers_freelancers__ = __webpack_require__(359);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__angular_platform_browser_animations__ = __webpack_require__(622);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_profilefreelancer_profilefreelancer__ = __webpack_require__(336);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_profileclient_profileclient__ = __webpack_require__(363);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_ionic2_auto_complete__ = __webpack_require__(625);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_profileclient_profileclient__ = __webpack_require__(362);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_ionic2_auto_complete__ = __webpack_require__(624);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__angular_forms__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__providers_completetest_completetest__ = __webpack_require__(632);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_joblist_joblist__ = __webpack_require__(636);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__providers_completetest_completetest__ = __webpack_require__(631);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_joblist_joblist__ = __webpack_require__(635);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__providers_chat_service__ = __webpack_require__(333);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_detailsfreelancer_detailsfreelancer__ = __webpack_require__(361);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_detailsfreelancer_detailsfreelancer__ = __webpack_require__(360);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__providers_auth_auth__ = __webpack_require__(197);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_register_register__ = __webpack_require__(355);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__providers_countriesapi_countriesapi__ = __webpack_require__(356);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_setupprofile_setupprofile__ = __webpack_require__(212);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__ionic_native_geolocation_ngx__ = __webpack_require__(335);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_modal_modal__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_modal_modal__ = __webpack_require__(636);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_writeup_writeup__ = __webpack_require__(642);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1888,6 +1853,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 // import { Chat } from '../pages/chat/chat';
+
 
 
 
@@ -1948,6 +1914,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_23__pages_profilefreelancer_profilefreelancer__["a" /* ProfilefreelancerPage */],
                 __WEBPACK_IMPORTED_MODULE_34__pages_setupprofile_setupprofile__["a" /* SetupprofilePage */],
                 __WEBPACK_IMPORTED_MODULE_24__pages_profileclient_profileclient__["a" /* ProfileclientPage */],
+                __WEBPACK_IMPORTED_MODULE_37__pages_writeup_writeup__["a" /* WriteupPage */],
                 __WEBPACK_IMPORTED_MODULE_21__pages_freelancers_freelancers__["a" /* FreelancersPage */],
                 __WEBPACK_IMPORTED_MODULE_17__pages_tabsfreelancer_tabsfreelancer__["a" /* TabsfreelancerPage */],
                 __WEBPACK_IMPORTED_MODULE_19__pages_postjob_postjob__["a" /* PostjobPage */],
@@ -1979,6 +1946,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_20__pages_shortlisted_shortlisted__["a" /* ShortlistedPage */],
                 __WEBPACK_IMPORTED_MODULE_21__pages_freelancers_freelancers__["a" /* FreelancersPage */],
                 __WEBPACK_IMPORTED_MODULE_23__pages_profilefreelancer_profilefreelancer__["a" /* ProfilefreelancerPage */],
+                __WEBPACK_IMPORTED_MODULE_37__pages_writeup_writeup__["a" /* WriteupPage */],
                 __WEBPACK_IMPORTED_MODULE_32__pages_register_register__["a" /* RegisterPage */],
                 __WEBPACK_IMPORTED_MODULE_24__pages_profileclient_profileclient__["a" /* ProfileclientPage */],
                 __WEBPACK_IMPORTED_MODULE_34__pages_setupprofile_setupprofile__["a" /* SetupprofilePage */],
@@ -2017,7 +1985,7 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 519:
+/***/ 518:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2028,10 +1996,9 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(329);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(330);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabsclient_tabsclient__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_postjob_postjob__ = __webpack_require__(362);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_profileclient_profileclient__ = __webpack_require__(363);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_postjob_postjob__ = __webpack_require__(361);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_profileclient_profileclient__ = __webpack_require__(362);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_storage__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_setupprofile_setupprofile__ = __webpack_require__(212);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2050,7 +2017,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var MyApp = /** @class */ (function () {
     function MyApp(platform, storage, events, statusBar, splashScreen) {
         this.platform = platform;
@@ -2059,7 +2025,7 @@ var MyApp = /** @class */ (function () {
         this.statusBar = statusBar;
         this.splashScreen = splashScreen;
         this.initializeApp();
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_9__pages_setupprofile_setupprofile__["a" /* SetupprofilePage */];
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_login_login__["a" /* LoginPage */];
         // this.storage.get("type").then((res) =>{
         //   console.log(res);
         //   if(res == null){
@@ -2119,24 +2085,22 @@ var MyApp = /** @class */ (function () {
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Nav */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Nav */])
+        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Nav */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Nav */]) === "function" && _a || Object)
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/app/app.html"*/'<ion-menu persistent="true" [content]="content" type="overlay">\n  <ion-header no-border>\n    <ion-toolbar>\n              <div class="container">\n                  <img class="userimage" src="../../assets/one.jpg">\n                  <b class="user-name">Edung Divinefavour</b>\n                  <div class="user-mail">lawrenedickson49@gmail.com</div>\n                  <br>\n                  <br>\n                 \n              </div>\n\n    </ion-toolbar>\n  </ion-header>\n  \n  <ion-content>\n\n      <ion-list>\n        <button ion-item menuClose *ngFor="let p of pages" (click)="openPage(p)">\n            <ion-icon item-start [name]="p.icon"></ion-icon>\n            <!-- <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon> -->\n            {{ p.title }}\n          </button>\n      </ion-list>\n\n<!-- \n            <ion-list>\n        <button ion-item menuClose *ngFor="let p of pages" (click)="openPage(p)">\n            <ion-icon item-start [name]="p.icon"></ion-icon>\n            {{ p.title }}\n          </button>\n      </ion-list> -->\n    </ion-content>\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Platform */],
-            __WEBPACK_IMPORTED_MODULE_8__ionic_storage__["b" /* Storage */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */],
-            __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_8__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__ionic_storage__["b" /* Storage */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _f || Object])
     ], MyApp);
     return MyApp;
+    var _a, _b, _c, _d, _e, _f;
 }());
 
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
 
-/***/ 622:
+/***/ 621:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2170,14 +2134,14 @@ var EmojiProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 632:
+/***/ 631:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CompletetestProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__(633);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__(632);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(634);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(633);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2220,7 +2184,7 @@ var CompletetestProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 636:
+/***/ 635:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2257,7 +2221,112 @@ var JoblistPage = /** @class */ (function () {
 
 //# sourceMappingURL=joblist.js.map
 
+/***/ }),
+
+/***/ 636:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register_register__ = __webpack_require__(355);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ModalPage = /** @class */ (function () {
+    function ModalPage(navCtrl, view, element, navParams) {
+        this.navCtrl = navCtrl;
+        this.view = view;
+        this.element = element;
+        this.navParams = navParams;
+        this.writeup = "";
+        this.callback = this.navParams.get('callback');
+    }
+    ModalPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ModalPage');
+    };
+    ModalPage.prototype.goPrevious = function () {
+        var _this = this;
+        this.callback(this.writeup).then(function () {
+            _this.navCtrl.pop();
+        });
+    };
+    ModalPage.prototype.doit = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__register_register__["a" /* RegisterPage */]);
+    };
+    ModalPage.prototype.autoSizeDescription = function () {
+        var textArea = this.element.nativeElement.getElementsByTagName('textarea')[0];
+        textArea.style.overflow = 'hidden';
+        textArea.style.height = 'auto';
+        textArea.style.height = textArea.scrollHeight + 'px';
+        return;
+    };
+    ModalPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-modal',template:/*ion-inline-start:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/modal/modal.html"*/'<!--\n  Generated template for the ModalPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="light">\n    <ion-title>Write about yourself</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <!-- <ion-textarea style="height: 40vh" placeholder="Write about yourself here">\n\n    </ion-textarea> -->\n\n    <ion-textarea placeholder="Write about yourself here" type="text" [(ngModel)]="writeup" (input)="autoSizeDescription($event);"></ion-textarea>\n\n\n    <button ion-button block (click)="goPrevious()">Save</button>\n</ion-content>\n'/*ion-inline-end:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/modal/modal.html"*/,
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ViewController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* ElementRef */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]) === "function" && _d || Object])
+    ], ModalPage);
+    return ModalPage;
+    var _a, _b, _c, _d;
+}());
+
+//# sourceMappingURL=modal.js.map
+
+/***/ }),
+
+/***/ 642:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WriteupPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var WriteupPage = /** @class */ (function () {
+    function WriteupPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    WriteupPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad WriteupPage');
+    };
+    WriteupPage.prototype.test = function () {
+        this.navCtrl.pop();
+    };
+    WriteupPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-writeup',template:/*ion-inline-start:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/writeup/writeup.html"*/'<!--\n  Generated template for the ModalPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="light">\n    <ion-title>Write about yourself</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <!-- <ion-textarea style="height: 40vh" placeholder="Write about yourself here">\n\n    </ion-textarea> -->\n\n    <ion-textarea (click)="test()" type="text" [(ngModel)]="writeup" (input)="autoSizeDescription($event);"></ion-textarea>\n</ion-content>\n'/*ion-inline-end:"/Users/lawrene/Desktop/DeepakTech_Tinder/src/pages/writeup/writeup.html"*/,
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]) === "function" && _b || Object])
+    ], WriteupPage);
+    return WriteupPage;
+    var _a, _b;
+}());
+
+//# sourceMappingURL=writeup.js.map
+
 /***/ })
 
-},[369]);
+},[368]);
 //# sourceMappingURL=main.js.map
