@@ -17,7 +17,7 @@ import { RegisterPage } from '../register/register';
 export class LoginPage {
 
   // firebase: firebase;
-  email: string = "c@gmail.com";
+  email: string = "q@gmail.com";
   password: string = "aaaaaaaa";
 
   constructor(public navCtrl: NavController,

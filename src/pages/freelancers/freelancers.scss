@@ -9,6 +9,21 @@ page-freelancers {
         height: 100vh;
     }
 
+    .bottominput{
+          position: absolute;
+          z-index: 5;
+          bottom: 15px;
+          left: 74vw;
+          font-size: 12px;
+          width: 12vw;
+          padding-left: 6px;
+          background-color: white;
+          // padding: 1px;
+          text-align: right;
+          color: black
+    }
+
+
     .headercard{
       position: absolute;
       z-index: 5;

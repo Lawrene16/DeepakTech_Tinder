@@ -47629,6 +47629,19 @@ page-freelancers #map {
   height: 100vh;
 }
 
+page-freelancers .bottominput {
+  position: absolute;
+  z-index: 5;
+  bottom: 15px;
+  left: 74vw;
+  font-size: 12px;
+  width: 12vw;
+  padding-left: 6px;
+  background-color: white;
+  text-align: right;
+  color: black;
+}
+
 page-freelancers .headercard {
   position: absolute;
   z-index: 5;

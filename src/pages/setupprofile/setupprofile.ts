@@ -45,6 +45,7 @@ export class SetupprofilePage {
     hourlyrate;
     experienceslist = [];
     shouldhidetext = false;
+    stringtoupload = "";
     shouldhidetexttwo = false;
     skillsstring:string;
 
@@ -69,27 +70,13 @@ export class SetupprofilePage {
 
     // if(this.skillstobeuploaded.length == 0){
       this.skillsstring = item + " | " + currentskills.innerHTML;
+
+      this.stringtoupload = this.stringtoupload + item + ' | ';
+      console.log(this.stringtoupload);
       currentskills.innerHTML = this.skillsstring;
     
       // console.log(item, i);
       this.skillstobeuploaded.push(item);
-    // }
-    // else{
-    //   this.skillstobeuploaded.forEach(skill => {
-    //       if(item == skill){
-    //           this.presentToast('You have already added this skill');
-    //       }else{
-    //         currentskills.innerHTML = item + " | " + currentskills.innerHTML;
-    
-    //         console.log(item);
-    //         this.skillstobeuploaded.push(item);
-    //         this.countries = [];
-
-    //         this.list.splice(item);
-    //       }
-    //   });
-    // }
-
 
     this.countries = [];
     this.input = "";
@@ -115,22 +102,6 @@ export class SetupprofilePage {
   }
 
   presentModal() {
-    // const modal = this.modalCtrl.create(ModalPage);
-    // modal.onDidDismiss(data => {
-    //   console.log(data);
-    //   this.writeup == data;
-    //   });
-    // modal.present();
-    // this.navCtrl.push(ModalPage);
-
-     // callback...
-
-
-// push page...
-      // this.navCtrl.push(ModalPage, {
-      // callback: this.myCallbackFunction
-      // });
-
       this.navCtrl.push(ModalPage,
         {
             // data: this.data,
@@ -292,6 +263,7 @@ export class SetupprofilePage {
     this.firedata.ref('/users').child(firebase.auth().currentUser.uid).update({
       hourlyRate: '$' + this.hourlyrate + '/hr',
       skillstags: this.skillstobeuploaded,
+      skillsstring: this.stringtoupload,
       experiences: this.experienceslist,
       aboutMe: this.writeup
     }).then(() =>{

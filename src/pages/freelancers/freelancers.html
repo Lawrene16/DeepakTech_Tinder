@@ -20,17 +20,17 @@
 
 <ion-content class="maincontent">
 
-
-
-
-
-  <ion-fab bottom right >
+  <ion-fab bottom right (click)="increase()" >
     <button color="testone" ion-fab mini>
       <ion-icon name="md-add"></ion-icon>
     </button>
   </ion-fab>
 
-  <ion-fab bottom right style="margin-right: 45px">
+  <ion-input [(ngModel)]="radius" (keypress)="eventHandler($event.keyCode)" class="bottominput" bottom right placeholder="radius">
+      
+  </ion-input>
+
+  <ion-fab bottom (click)="reduce()" right style="margin-right: 85px">
     <button color="testone" ion-fab mini>
       <ion-icon name="md-remove"></ion-icon>
     </button>
@@ -52,10 +52,19 @@
 
         <ion-col>
           <ion-searchbar animated="true" 
-          placeholder="Find talents close to you" class="mysearch"></ion-searchbar>
+          placeholder="Find talents close to you"
+          (ionChange)="search()"
+          (ionBlur)="removeFocus()"
+          debounce=500 [(ngModel)]="searchedtag" class="mysearch"></ion-searchbar>
             <!-- <ion-searchbar animated="true" 
         placeholder="Search for talents close to you" class="mysearchbar"></ion-searchbar>-->
         </ion-col>
+
+        <ion-list>
+          <ion-item *ngFor="let country of countries" (click)="add(country, i)">
+            {{country}}
+          </ion-item>
+        </ion-list>
 
         <ion-col col-1>
         <ion-icon style="font-size: 27px; 

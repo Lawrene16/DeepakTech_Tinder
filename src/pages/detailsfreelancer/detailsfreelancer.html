@@ -16,12 +16,11 @@
       <!-- </div> -->
     </p>
 
-    <h4 align="center">Edung Divinefavour</h4>
-    <p align="center">Android | UI/UX Design | Flutter | Ionic<br>
-    Adwords | Analytics | Email Marketing
+    <h4 align="center">{{fullname}}</h4>
+    <p align="center">{{skills}}
     </p>
 
-    <p align="center">Hourly Rate - $12.5/hr</p>
+    <p align="center">Hourly Rate - {{hourlyrate}}</p>
 
     <ion-grid>
       <ion-row>
@@ -42,30 +41,26 @@
       <ion-list>
         <ion-list-header>Last Experience</ion-list-header>
 
-        <ion-item>
+        <ion-item *ngFor="let experience of experiences">
           <ion-avatar item-left>
             <img src="../../assets/upwork.png">
           </ion-avatar>
-          <b>UI Designer</b><br>
-          Upwork
+          <b>{{experience.role}}</b><br>
+          {{experience.company}}
         </ion-item>
 
-        <ion-item>
+        <!-- <ion-item>
             <ion-avatar item-left>
               <img src="../../assets/upwork.png">
             </ion-avatar>
             <b>Android Developer</b><br>
             Upwork
-          </ion-item>
+          </ion-item> -->
 
           <br>
           <ion-list-header>About Edung</ion-list-header>
           <div style="margin: 15px; font-size: 16px">
-              I am an Expert Cross platform Mobile Developer with over 4 years experience building mobile apps with Java, Kotlin, Swift, Objective-C, Ionic and Flutter. 
-        
-              I build/maintain/debug mobile apps as a hobby, therefore, I have expert knowledge on a lot of areas and tools that extend the Android and iOS framework to whatever is to be achieved.
-  
-              I look forward to working with you
+              {{writeup}}
           </div>
       </ion-list>
     </ion-list>

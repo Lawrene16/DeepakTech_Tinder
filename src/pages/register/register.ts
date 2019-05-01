@@ -47,8 +47,6 @@ export class RegisterPage {
     this.linkedin.login(this.scopes, true)
     .then(() => this.presentToast('Logged In'))
     .catch(e => console.log('Error logging in', e));
-
-
   } 
 
   isRecruiter(){
